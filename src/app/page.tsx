@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
    return (
@@ -7,9 +8,9 @@ export default function Home() {
             <Image src="/logo.svg" alt="Pipo Studio" width={100} height={100} />
             <nav>
                <ul className="flex gap-4 text-foreground-secondary">
-                  <li>about.</li>
-                  <li>cases.</li>
-                  <li>contact.</li>
+                  <Link href="/about">about.</Link>
+                  <Link href="/cases">cases.</Link>
+                  <Link href="/contact">contact.</Link>
                </ul>
             </nav>
          </header>
