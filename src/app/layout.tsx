@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Funnel_Display } from "next/font/google";
+import { Funnel_Display, Funnel_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 
-const geistSans = Funnel_Display({
+export const funnelDisplay = Funnel_Display({
    variable: "--font-funnel-display",
    subsets: ["latin"],
 });
 
-const geistMono = Funnel_Display({
-   variable: "--font-funnel-display",
+export const funnelSans = Funnel_Sans({
+   variable: "--font-funnel-sans",
    subsets: ["latin"],
 });
 
@@ -27,10 +27,8 @@ export default function RootLayout({
    children: React.ReactNode;
 }>) {
    return (
-      <html lang="en">
-         <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-         >
+      <html lang="en" className={`${funnelDisplay.variable} ${funnelSans.variable} antialiased`}>
+         <body className="font-display">
             <Header />
             <main>
                {children}
