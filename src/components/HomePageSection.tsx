@@ -1,13 +1,13 @@
 interface HomePageSectionProps {
-   hasCtaElement?: boolean;
+   hasCTAElement?: boolean;
    children: React.ReactNode;
    className?: string;
 }
 
-export function HomePageSection({ children, hasCtaElement = false, className }: HomePageSectionProps) {
+export function HomePageSection({ children, hasCTAElement = false, className }: HomePageSectionProps) {
    return (
       <section className={`min-h-[calc(100vh-110px)] ${className}`}>
-         {hasCtaElement && (
+         {hasCTAElement && (
             <div className="flex justify-center items-center">
                <button className="bg-foreground-secondary text-white px-4 py-2 rounded-md">
                   CTA
