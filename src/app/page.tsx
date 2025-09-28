@@ -9,7 +9,7 @@ export default function Home() {
    return (
       <HomePageSection className="flex flex-col gap-10 items-center justify-center">
          <div className="flex items-center justify-center">
-            <h1 className="w-full md:max-w-[45rem] text-6xl md:text-8xl text-center font-display">
+            <h1 className="w-full md:max-w-[49rem] text-6xl md:text-8xl text-center font-display">
                {t("title.normalWeight")} <b>{t("title.boldWeight")}</b>
             </h1>
          </div>
