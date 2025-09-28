@@ -1,0 +1,17 @@
+{
+   "home": {
+      "title": {
+         "normalWeight": "Nós construímos marcas com",
+         "boldWeight": "sabor, estratégia e presença."
+      },
+      "cta": "Inicie seu projeto",
+      "arrow": "Role para baixo",
+      "about": "sobre.",
+      "cases": "cases.",
+      "contact": "contato."
+   },
+   "locales": {
+      "en": "Inglês",
+      "pt-BR": "Português"
+   }
+}
