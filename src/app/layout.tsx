@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Funnel_Display, Funnel_Sans } from "next/font/google";
 import "./globals.css";
+import i18n from "@/i18n";
+import { LanguagesOptionsProvider } from "@/contexts/LanguagesOptionsContext";
 import { Header } from "@/components/Header";
 
 export const funnelDisplay = Funnel_Display({
@@ -31,7 +33,9 @@ export default function RootLayout({
          <body className="font-display">
             <Header />
             <main>
-               {children}
+               <LanguagesOptionsProvider>
+                  {children}
+               </LanguagesOptionsProvider>
             </main>
          </body>
       </html>
