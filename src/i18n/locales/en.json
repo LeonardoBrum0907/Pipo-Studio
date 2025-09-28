@@ -9,5 +9,9 @@
       "about": "about.",
       "cases": "cases.",
       "contact": "contact."
+   },
+   "locales": {
+      "en": "English",
+      "pt-BR": "Portuguese"
    }
 }
