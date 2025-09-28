@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Funnel_Display, Funnel_Sans } from "next/font/google";
 import "./globals.css";
-import i18n from "@/i18n";
-import { LanguagesOptionsProvider } from "@/contexts/LanguagesOptionsContext";
 import { Header } from "@/components/Header";
+import { NextIntlClientProvider } from "next-intl";
 
 export const funnelDisplay = Funnel_Display({
    variable: "--font-funnel-display",
@@ -31,12 +30,12 @@ export default function RootLayout({
    return (
       <html lang="en" className={`${funnelDisplay.variable} ${funnelSans.variable} antialiased`}>
          <body className="font-display">
-            <Header />
-            <main>
-               <LanguagesOptionsProvider>
+            <NextIntlClientProvider>
+               <Header />
+               <main>
                   {children}
-               </LanguagesOptionsProvider>
-            </main>
+               </main>
+            </NextIntlClientProvider>
          </body>
       </html>
    );
