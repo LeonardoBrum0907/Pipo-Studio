@@ -10,7 +10,7 @@ interface ButtonCTAProps {
 export function ButtonCTA({ children, type = "primary", className }: ButtonCTAProps) {
    const t = useTranslations('home');
    return (
-      <Link href="/contact" className={`px-8 py-4 rounded-full hover:opacity-90 transition-opacity ${type === "primary" ? "bg-foreground-secondary text-white" : "bg-transparent border border-foreground-secondary text-foreground-secondary"} ${className}`}>
+      <Link href="/contact" className={`px-8 rounded-full hover:scale-101 transition-all ${type === "primary" ? "bg-foreground-secondary text-white py-4" : "bg-transparent border border-foreground-secondary text-foreground-secondary py-2"} ${className}`}>
          {children || t("cta")}
       </Link>
    )
