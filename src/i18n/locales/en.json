@@ -1,9 +1,40 @@
 {
-   "home": {
+   "homePage": {
       "title": {
          "normalWeight": "We build brands with",
          "boldWeight": "flavor, strategy, and presence."
       },
+      "ourBrandingProcess": [
+         {
+            "title": "Immersion",
+            "description": "A deep dive into the client’s universe. Through interviews and context analysis, we understand the business, its differentiators, audience, and market. This stage provides a clear view of the brand’s needs and opportunities."
+         },
+         {
+            "title": "Diagnosis",
+            "description": "We organize the insights collected and identify key points: positioning challenges, growth opportunities, and communication gaps. The diagnosis is the strategic foundation that guides all the next stages."
+         },
+         {
+            "title": "Research & References",
+            "description": "We study benchmarks, competitors, and relevant trends. From there, we create reference boards that help visualize different creative territories for the brand."
+         },
+         {
+            "title": "Verbal Key",
+            "description": "We define the brand’s verbal territory: tone of voice, key messages, and semantic fields the brand should own. This ensures consistency in communication and translates the essence of the business into words."
+         },
+         {
+            "title": "Visual Key",
+            "description": "We turn strategy into visual identity. Logo, colors, typography, and graphic elements are developed in synergy with the verbal territory, resulting in a unique and distinctive expression."
+         },
+         {
+            "title": "Applications",
+            "description": "The identity comes to life in real touchpoints: packaging, menus, signage, social media, and digital materials. Each application is designed to maintain consistency and relevance."
+         },
+         {
+            "title": "Brand Guidelines",
+            "description": "We consolidate all visual and verbal directions into a complete guide. The manual ensures the brand remains coherent and strong across all future applications."
+         }
+
+      ],
       "cta": "Start your project",
       "arrow": "Scroll down",
       "about": "about.",
