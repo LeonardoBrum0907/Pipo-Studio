@@ -1,17 +1,19 @@
 import { HomePageSection } from "@/components/HomePageSection";
 import { ButtonCTA } from "@/components/ui/ButtonCTA";
 import { Arrow } from "@/components/ui/Arrow";
-import { useLocale, useTranslations, useFormatter, useMessages } from "next-intl";
-import contentSchemaJSON from "@/i18n/locales/en.json";
+import { useTranslations, useMessages } from "next-intl";
 import Image from "next/image";
 import { OurBrandingProcess } from "@/components/OurBrandingProcess";
-import { getUserLocale } from "@/services/locale";
-import { Locale } from "@/i18n/config";
+
+interface OurBrandingProcessList {
+   title: string;
+   description: string;
+}
 
 export default function Home() {
    const messages = useMessages();
    const t = useTranslations('homePage');
-   const ourBrandingProcessList = messages['homePage']['ourBrandingProcess'];
+   const ourBrandingProcessList = messages['homePage']['ourBrandingProcess'] as OurBrandingProcessList[];
 
    return (
       <>
@@ -37,7 +39,7 @@ export default function Home() {
          </HomePageSection>
 
          <HomePageSection className="" hasCTAElement>
-            {ourBrandingProcessList.map((item: any) => (
+            {ourBrandingProcessList.map((item) => (
                <OurBrandingProcess key={item.title} title={item.title} description={item.description} />
             ))}
          </HomePageSection>
