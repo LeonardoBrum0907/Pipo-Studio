@@ -5,7 +5,7 @@ import { LocaleSwitcher } from "./LocaleSwitcher";
 import { Separator } from "./ui/Separator";
 
 export function Header() {
-   const t = useTranslations('home');
+   const t = useTranslations('homePage');
 
    const links = [
       { href: '/', label: t('about') },
