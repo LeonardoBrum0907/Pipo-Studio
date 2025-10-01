@@ -45,7 +45,7 @@ export function WixMediaImage({
           {...styleProps}
           src={imageUrl}
           alt={alt}
-          className={`object-cover w-full ${
+          className={`object-cover rounded-3xl w-full ${
             !disableZoom ? 'group-hover:scale-110' : ''
           } transition duration-300 ease-in-out ${className}`}
         />
