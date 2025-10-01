@@ -17,7 +17,6 @@ export default async function Page(props: PageProps) {
             <div>
                <h2>{caseData.projectName}</h2>
                <p>{caseData.projectDescription}</p>
-               <Image src={caseData.brandLogo} alt={caseData.projectName} width={100} height={100} />
                <div>
                   {caseData.mediaGallery.map((item, idx) => (
                      <div key={idx} className="p-4 relative">
