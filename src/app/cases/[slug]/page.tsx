@@ -1,16 +1,15 @@
-import { use } from "react";
-import { casesListMock, CasesListMock } from "../page";
 import Image from "next/image";
+import { createCasesService } from "@/services/cases";
+import { WixMediaImage } from "@/components/WixMediaImage";
 
 interface PageProps {
    params: Promise<{ slug: string }>
 }
 
-export default function Page(props: PageProps) {
-   const { slug } = use(props.params)
-   const caseData: CasesListMock | undefined = casesListMock.find((item) => item.projectName.replace(/ /g, '-') === slug)
-
-   console.log(slug, caseData)
+export default async function Page(props: PageProps) {
+   const { slug } = await props.params
+   const casesService = createCasesService();
+   const caseData = await casesService.getCaseBySlug(slug);
 
    return (
       <div>
@@ -20,8 +19,13 @@ export default function Page(props: PageProps) {
                <p>{caseData.projectDescription}</p>
                <Image src={caseData.brandLogo} alt={caseData.projectName} width={100} height={100} />
                <div>
-                  {caseData.gallery.map((item, idx) => (
-                     <Image key={idx} src={item} alt={caseData.projectName} width={100} height={100} />
+                  {caseData.mediaGallery.map((item, idx) => (
+                     <div key={idx} className="p-4 relative">
+                        <WixMediaImage
+                           media={item.src}
+                           alt={caseData.projectName}
+                        />
+                     </div>
                   ))}
                </div>
             </div>
