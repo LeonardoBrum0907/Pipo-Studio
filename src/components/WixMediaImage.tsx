@@ -3,6 +3,7 @@ import Image, { ImageProps } from 'next/image';
 
 function getImageUrlForMedia(media: string, width: number, height: number) {
   if (media.startsWith('wix:image')) {
+    console.log('wix image ',wixMedia.getScaledToFillImageUrl(media, width, height, {}) )
     return wixMedia.getScaledToFillImageUrl(media, width, height, {});
   } else {
     return media;
@@ -15,17 +16,17 @@ export function WixMediaImage({
   width = 640,
   alt = 'no info available for image',
   className,
-  sizes = '10vw',
   objectFit,
   disableZoom = false,
+  imageTitle = false,
 }: {
   media?: string;
   alt?: string;
   width?: number;
   height?: number;
-  sizes?: string;
   className?: string;
   disableZoom?: boolean;
+  imageTitle?: boolean;
   objectFit?: 'cover' | 'contain';
 }) {
   const imageUrl = media
@@ -34,22 +35,26 @@ export function WixMediaImage({
 
   const styleProps: Partial<ImageProps> = {
     ...(objectFit
-      ? { style: { objectFit }, fill: true, sizes }
+      ? { style: { objectFit }, width, height}
       : { width, height }),
   };
 
   return (
-    <div className={`flex items-center justify-center h-full`}>
-      <div className="overflow-hidden relative group w-full h-full">
-        <Image
-          {...styleProps}
-          src={imageUrl}
-          alt={alt}
-          className={`object-cover rounded-3xl w-full ${
-            !disableZoom ? 'group-hover:scale-110' : ''
-          } transition duration-300 ease-in-out ${className}`}
-        />
-      </div>
+    <div className={`relative flex flex-col items-center justify-center h-full w-full shrink-0 group overflow-hidden rounded-3xl`}>
+      <Image
+        {...styleProps}
+        src={imageUrl}
+        alt={alt}
+        className={`w-full h-full ${
+          !disableZoom ? 'group-hover:scale-110' : ''
+        } transition duration-300 ease-in-out ${className}`}
+      />
+      {imageTitle && (
+        <div className="flex justify-between rounded-3xl py-2 px-6 absolute bottom-5 md:bottom-0 md:translate-y-full group-hover:-translate-y-full transition-all duration-300 w-[90%] md:overflow-hidden bg-white/70 backdrop-blur-sm inset-ring inset-ring-gray-700/10">
+          <span>ProjectName</span>
+          <span>United States</span>
+        </div>
+      )}
     </div>
   );
 }

@@ -41,6 +41,10 @@
       "cases": "cases.",
       "contact": "contato."
    },
+   "casesPage": {
+      "title": "Cases",
+      "description": "Confira os principais projetos de Identidade Visual desenvolvidos aqui no estúdio. Sempre trabalhamos em grande colaboração com nossos clientes, buscando alcançar o melhor resultado possível para o projeto e, assim, posicionar cada marca de forma única."
+   },
    "locales": {
       "en": "Inglês",
       "pt-BR": "Português"
