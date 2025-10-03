@@ -31,11 +31,11 @@ export default function Home() {
          </HomePageSection>
 
          <HomePageSection className="flex flex-col gap-8" hasCTAElement>
-            <div className="flex gap-8 h-[70vh]">
+            <div className="flex flex-col md:flex-row gap-8 h-[100vh] md:h-[70vh]">
                <Image src="/images/image-1.png" alt="Image 1" width={500} height={500} className="flex-2 object-cover rounded-xl" />
                <Image src="/images/image-2.png" alt="Image 2" width={500} height={500} className="flex-1 object-cover rounded-xl" />
             </div>
-            <div className="flex gap-8 h-[70vh]">
+            <div className="flex flex-col md:flex-row gap-8 h-[100vh] md:h-[70vh]">
                <Image src="/images/image-4.png" alt="Image 1" width={500} height={500} className="flex-1 object-cover rounded-xl" />
                <Image src="/images/image-3.png" alt="Image 2" width={500} height={500} className="flex-2 object-cover rounded-xl" />
             </div>
