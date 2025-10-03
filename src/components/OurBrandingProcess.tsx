@@ -10,7 +10,6 @@ interface OurBrandingProcessProps {
 
 export function OurBrandingProcess({ title, description }: OurBrandingProcessProps) {
    const [expandedBrandingProcessList, setExpandedBrandingProcessList] = useState(false);
-   // const [expandedBrandingProcessList, setExpandedBrandingProcessList] = useState<Record<string, boolean>>({});
 
    const toggleBrandingProcessList = () => {
       setExpandedBrandingProcessList(!expandedBrandingProcessList);

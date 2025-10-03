@@ -41,8 +41,15 @@ export default function Home() {
             </div>
          </HomePageSection>
 
-         <HomePageSection className="" hasCTAElement>
-            {ourBrandingProcessList.map((item, index) => {
+         <HomePageSection hasCTAElement>
+            <div className="flex flex-col items-center gap-6 mt-8 mb-16">
+               <h2 className="text-6xl md:text-8xl text-foreground-secondary">Our Branding Process</h2>
+               <p className="md:text-2xl">
+                  Structured steps that guarantee consistency and remarkable results.
+               </p>
+            </div>
+
+            {ourBrandingProcessList.map((item) => {
                return (
                   <OurBrandingProcess key={item.title} title={item.title} description={item.description} />
                )
