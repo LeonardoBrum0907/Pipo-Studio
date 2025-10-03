@@ -41,6 +41,10 @@
       "cases": "cases.",
       "contact": "contact."
    },
+   "casesPage": {
+      "title": "Cases",
+      "description": "Check out the main Visual Identity projects developed here at the studio. We always work through great collaboration with our clients, aiming to achieve the best possible result for the project and thus position each brand in a unique way."
+   },
    "locales": {
       "en": "English",
       "pt-BR": "Portuguese"
