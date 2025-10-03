@@ -18,6 +18,7 @@ export function WixMediaImage({
   className,
   objectFit,
   disableZoom = false,
+  imageTitle = false,
 }: {
   media?: string;
   alt?: string;
@@ -25,6 +26,7 @@ export function WixMediaImage({
   height?: number;
   className?: string;
   disableZoom?: boolean;
+  imageTitle?: boolean;
   objectFit?: 'cover' | 'contain';
 }) {
   const imageUrl = media
@@ -38,7 +40,7 @@ export function WixMediaImage({
   };
 
   return (
-    <div className={`flex items-center justify-center h-full w-full shrink-0 group overflow-hidden rounded-3xl`}>
+    <div className={`relative flex flex-col items-center justify-center h-full w-full shrink-0 group overflow-hidden rounded-3xl`}>
       <Image
         {...styleProps}
         src={imageUrl}
@@ -47,6 +49,12 @@ export function WixMediaImage({
           !disableZoom ? 'group-hover:scale-110' : ''
         } transition duration-300 ease-in-out ${className}`}
       />
+      {imageTitle && (
+        <div className="flex justify-between rounded-3xl py-2 px-6 absolute bottom-5 md:bottom-0 md:translate-y-full group-hover:-translate-y-full transition-all duration-300 w-[90%] md:overflow-hidden bg-white/70 backdrop-blur-sm inset-ring inset-ring-gray-700/10">
+          <span>ProjectName</span>
+          <span>United States</span>
+        </div>
+      )}
     </div>
   );
 }
