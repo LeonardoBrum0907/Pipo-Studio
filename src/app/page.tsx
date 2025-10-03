@@ -7,11 +7,21 @@ import { useTranslations, useMessages } from "next-intl";
 import Image from "next/image";
 import { OurBrandingProcess } from "@/components/OurBrandingProcess";
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
 interface OurBrandingProcessList {
    title: string;
    description: string;
 }
+
+const customerFeedbacks = [
+   {
+      customerName: "John Doe",
+      customerFeedback: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+      customerImage: "/images/customer-1.png"
+   }
+]
 
 export default function Home() {
    const messages = useMessages();
@@ -43,8 +53,8 @@ export default function Home() {
 
          <HomePageSection hasCTAElement>
             <div className="flex flex-col items-center gap-6 mt-8 mb-16">
-               <h2 className="text-6xl md:text-8xl text-foreground-secondary">Our Branding Process</h2>
-               <p className="md:text-2xl">
+               <h2 className="text-6xl md:text-8xl text-foreground-secondary text-center">Our Branding Process</h2>
+               <p className="md:text-2xl text-center">
                   Structured steps that guarantee consistency and remarkable results.
                </p>
             </div>
@@ -54,6 +64,26 @@ export default function Home() {
                   <OurBrandingProcess key={item.title} title={item.title} description={item.description} />
                )
             })}
+         </HomePageSection>
+
+         <HomePageSection hasCTAElement>
+            <div className="flex items-center justify-center flex-col gap-8">
+               <h2 className="w-full md:max-w-2/3 text-6xl md:text-8xl text-foreground-secondary text-center">
+                  Brands that tasted our method
+               </h2>
+
+               <Swiper navigation={true} modules={[Navigation]} className="mySwiper ring w-2/3">
+                  <SwiperSlide>Slide 1</SwiperSlide>
+                  <SwiperSlide>Slide 2</SwiperSlide>
+                  <SwiperSlide>Slide 3</SwiperSlide>
+                  <SwiperSlide>Slide 4</SwiperSlide>
+                  <SwiperSlide>Slide 5</SwiperSlide>
+                  <SwiperSlide>Slide 6</SwiperSlide>
+                  <SwiperSlide>Slide 7</SwiperSlide>
+                  <SwiperSlide>Slide 8</SwiperSlide>
+                  <SwiperSlide>Slide 9</SwiperSlide>
+               </Swiper>
+            </div>
          </HomePageSection>
       </>
    );
