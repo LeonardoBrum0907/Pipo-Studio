@@ -14,14 +14,11 @@ export default async function Cases() {
    const cases = await casesService.getAllCases();
 
    return (
-      <div className="flex gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
          {cases.map((item) => (
-            <div key={item.id}>
-               <Link href={`/cases/${item.slug}`}>
-                  <h2>{item.projectName}</h2>
-                  <WixMediaImage media={item.brandLogo} alt={item.projectName} width={100} height={100} />
-               </Link>
-            </div>
+            <Link key={item.id} className="flex flex-col items-center w-full h-[50vh] md:h-[70vh] " href={`/cases/${item.slug}`}>
+               <WixMediaImage media={item.brandLogo} alt={item.projectName} objectFit="cover"/>
+            </Link>
          ))}
       </div>
    )
