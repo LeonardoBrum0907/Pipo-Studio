@@ -1,9 +1,12 @@
+"use client";
+
 import { HomePageSection } from "@/components/HomePageSection";
 import { ButtonCTA } from "@/components/ui/ButtonCTA";
 import { Arrow } from "@/components/ui/Arrow";
 import { useTranslations, useMessages } from "next-intl";
 import Image from "next/image";
 import { OurBrandingProcess } from "@/components/OurBrandingProcess";
+import { useState } from "react";
 
 interface OurBrandingProcessList {
    title: string;
@@ -39,9 +42,11 @@ export default function Home() {
          </HomePageSection>
 
          <HomePageSection className="" hasCTAElement>
-            {ourBrandingProcessList.map((item) => (
-               <OurBrandingProcess key={item.title} title={item.title} description={item.description} />
-            ))}
+            {ourBrandingProcessList.map((item, index) => {
+               return (
+                  <OurBrandingProcess key={item.title} title={item.title} description={item.description} />
+               )
+            })}
          </HomePageSection>
       </>
    );
