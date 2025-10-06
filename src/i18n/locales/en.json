@@ -4,6 +4,8 @@
          "normalWeight": "We build brands with",
          "boldWeight": "flavor, strategy, and presence."
       },
+      "ourBrandingProcessTitle": "Our Branding Process",
+      "ourBrandingProcessDescription": "Structured steps that guarantee consistency and remarkable results.",
       "ourBrandingProcess": [
          {
             "title": "Immersion",
@@ -35,6 +37,9 @@
          }
 
       ],
+      "brandsThatTastedOurMethod": "Brands that tasted our method",
+      "letTalkAboutYourBrand": "Let’s talk about your brand",
+      "tellUsAboutYourBrand": "Tell us about your brand. Together we’ll build something consistent and memorable. For direct contact: ayrtonpipo@gmail.com",
       "cta": "Start your project",
       "arrow": "Scroll down",
       "about": "about.",

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Funnel_Display, Funnel_Sans } from "next/font/google";
+import 'swiper/css';
+import 'swiper/css/navigation';
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { NextIntlClientProvider } from "next-intl";

@@ -4,6 +4,8 @@
          "normalWeight": "Nós construímos marcas com",
          "boldWeight": "sabor, estratégia e presença."
       },
+      "ourBrandingProcessTitle": "Nosso Processo de Branding",
+      "ourBrandingProcessDescription": "Passos estruturados que garantem consistência e resultados notáveis.",
       "ourBrandingProcess": [
          {
             "title": "Imersão",
@@ -35,6 +37,9 @@
          }
 
       ],
+      "brandsThatTastedOurMethod": "Marcas que experimentaram nosso método",
+      "letTalkAboutYourBrand": "Vamos falar sobre sua marca",
+      "tellUsAboutYourBrand": "Diga-nos sobre sua marca. Juntos construiremos algo consistente e memorável. Para contato direto: ayrtonpipo@gmail.com",
       "cta": "Inicie seu projeto",
       "arrow": "Role para baixo",
       "about": "sobre.",

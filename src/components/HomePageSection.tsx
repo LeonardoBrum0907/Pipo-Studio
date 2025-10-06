@@ -9,7 +9,7 @@ interface HomePageSectionProps {
 
 export function HomePageSection({ children, hasCTAElement = false, className }: HomePageSectionProps) {
    return (
-      <section className={`min-h-[calc(100vh-110px)] px-8 md:px-16 not-first:mt-16 ${className}`}>
+      <section className={`min-h-[calc(100vh-110px)] px-8 md:px-16 not-first:mt-16 flex flex-col gap-8 ${className}`}>
          {hasCTAElement && (
             <div className="flex justify-between items-center">
                <Image src="/logo.svg" alt="Pipo Studio" width={100} height={100} />
@@ -17,7 +17,9 @@ export function HomePageSection({ children, hasCTAElement = false, className }: 
                <ButtonCTA type="secondary" />
             </div>
          )}
-         {children}
+         <div className="flex flex-col justify-center flex-1">
+            {children}
+         </div>
       </section>
    )
 }
