@@ -9,19 +9,12 @@ import { OurBrandingProcess } from "@/components/OurBrandingProcess";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { Separator } from "@/components/ui/Separator";
 
 interface OurBrandingProcessList {
    title: string;
    description: string;
 }
-
-const customerFeedbacks = [
-   {
-      customerName: "John Doe",
-      customerFeedback: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-      customerImage: "/images/customer-1.png"
-   }
-]
 
 export default function Home() {
    const messages = useMessages();
@@ -72,16 +65,68 @@ export default function Home() {
                   Brands that tasted our method
                </h2>
 
-               <Swiper navigation={true} modules={[Navigation]} className="mySwiper ring w-2/3">
-                  <SwiperSlide>Slide 1</SwiperSlide>
-                  <SwiperSlide>Slide 2</SwiperSlide>
-                  <SwiperSlide>Slide 3</SwiperSlide>
-                  <SwiperSlide>Slide 4</SwiperSlide>
-                  <SwiperSlide>Slide 5</SwiperSlide>
-                  <SwiperSlide>Slide 6</SwiperSlide>
-                  <SwiperSlide>Slide 7</SwiperSlide>
-                  <SwiperSlide>Slide 8</SwiperSlide>
-                  <SwiperSlide>Slide 9</SwiperSlide>
+               <Swiper
+                  navigation={true}
+                  spaceBetween={48}
+                  modules={[Navigation]}
+                  className="mySwiper w-full md:w-2/3 !px-8 !py-4 md:!px-12 md:!py-8"
+               >
+
+                  <SwiperSlide className="!flex flex-col md:flex-row items-center justify-center py-8 px-12 gap-12 ring ring-foreground rounded-2xl">
+
+                     <div className="flex flex-col items-center justify-center gap-4 flex-1">
+                        <div className="h-[100px] w-[100px] bg-foreground-secondary rounded-full"></div>
+                        <div className="text-center">
+                           <p>Nome do cliente</p>
+                           <p className="text-foreground-secondary font-bold">Empresa do Cliente</p>
+                        </div>
+                     </div>
+
+                     <Separator orientation="vertical" className="!h-[200px] bg-foreground hidden md:block " />
+                     <Separator className="bg-foreground block md:hidden " />
+
+                     <p className="text-2xl flex-2">
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+                     </p>
+
+                  </SwiperSlide>
+                  <SwiperSlide className="!flex flex-col md:flex-row items-center justify-center py-8 px-12 gap-12 ring ring-foreground rounded-2xl">
+
+                     <div className="flex flex-col items-center justify-center gap-4 flex-1">
+                        <div className="h-[100px] w-[100px] bg-foreground-secondary rounded-full"></div>
+                        <div className="text-center">
+                           <p>Nome do cliente</p>
+                           <p className="text-foreground-secondary font-bold">Empresa do Cliente</p>
+                        </div>
+                     </div>
+
+                     <Separator orientation="vertical" className="!h-[200px] bg-foreground hidden md:block " />
+                     <Separator className="bg-foreground block md:hidden " />
+
+                     <p className="text-2xl flex-2">
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+                     </p>
+
+                  </SwiperSlide>
+                  <SwiperSlide className="!flex flex-col md:flex-row items-center justify-center py-8 px-12 gap-12 ring ring-foreground rounded-2xl">
+
+                     <div className="flex flex-col items-center justify-center gap-4 flex-1">
+                        <div className="h-[100px] w-[100px] bg-foreground-secondary rounded-full"></div>
+                        <div className="text-center">
+                           <p>Nome do cliente</p>
+                           <p className="text-foreground-secondary font-bold">Empresa do Cliente</p>
+                        </div>
+                     </div>
+
+                     <Separator orientation="vertical" className="!h-[200px] bg-foreground hidden md:block " />
+                     <Separator className="bg-foreground block md:hidden " />
+
+                     <p className="text-2xl flex-2">
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+                     </p>
+
+                  </SwiperSlide>
+
                </Swiper>
             </div>
          </HomePageSection>
