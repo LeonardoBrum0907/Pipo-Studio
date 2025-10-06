@@ -8,14 +8,16 @@ export function Header() {
    const t = useTranslations('homePage');
 
    const links = [
-      { href: '/', label: t('about') },
+      { href: '/#about', label: t('about') },
       { href: '/cases', label: t('cases') },
       { href: '/contact', label: t('contact') },
    ]
 
    return (
       <header className="w-full px-8 md:px-16 h-[110px] flex justify-between items-center">
-         <Image src="/logo.svg" alt="Pipo Studio" width={100} height={100} />
+         <Link href="/">
+            <Image src="/logo.svg" alt="Pipo Studio" width={100} height={100} />
+         </Link>
          <nav className="flex items-center gap-4 h-5">
             <ul className="flex gap-4 text-foreground-secondary">
                {links.map((link) => (
