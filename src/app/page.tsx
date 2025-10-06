@@ -6,7 +6,6 @@ import { Arrow } from "@/components/ui/Arrow";
 import { useTranslations, useMessages } from "next-intl";
 import Image from "next/image";
 import { OurBrandingProcess } from "@/components/OurBrandingProcess";
-import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { Separator } from "@/components/ui/Separator";
@@ -92,7 +91,7 @@ export default function Home() {
                      <Separator className="bg-foreground block md:hidden " />
 
                      <p className="text-xl flex-2">
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+                        &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.&quot;
                      </p>
 
                   </SwiperSlide>
@@ -110,7 +109,7 @@ export default function Home() {
                      <Separator className="bg-foreground block md:hidden " />
 
                      <p className="text-xl flex-2">
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+                        &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.&quot;
                      </p>
 
                   </SwiperSlide>
@@ -128,7 +127,7 @@ export default function Home() {
                      <Separator className="bg-foreground block md:hidden " />
 
                      <p className="text-xl flex-2">
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+                        &quot;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.&quot;
                      </p>
 
                   </SwiperSlide>
