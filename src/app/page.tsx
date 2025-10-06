@@ -51,10 +51,10 @@ export default function Home() {
          <HomePageSection hasCTAElement>
             <div className="flex flex-col items-center gap-6 mt-8 mb-16">
                <h2 className="text-5xl md:text-6xl text-foreground-secondary text-center">
-                  Our Branding Process
+                  {t("ourBrandingProcessTitle")}
                </h2>
                <p className="text-center">
-                  Structured steps that guarantee consistency and remarkable results.
+                  {t("ourBrandingProcessDescription")}
                </p>
             </div>
 
@@ -68,7 +68,7 @@ export default function Home() {
          <HomePageSection hasCTAElement>
             <div className="flex items-center justify-center flex-col gap-8">
                <h2 className="w-full md:max-w-2/3 text-5xl md:text-6xl text-foreground-secondary text-center">
-                  Brands that tasted our method
+                  {t("brandsThatTastedOurMethod")}
                </h2>
 
                <Swiper
@@ -140,10 +140,10 @@ export default function Home() {
          <HomePageSection hasCTAElement>
             <div className="flex flex-col items-center justify-center gap-8 w-full md:w-2/3 mx-auto text-center">
                <h2 className="text-5xl md:text-6xl text-foreground-secondary">
-                  Let’s talk about your brand
+                  {t("letTalkAboutYourBrand")}
                </h2>
                <p>
-                  Tell us about your brand. Together we’ll build something consistent and memorable. For direct contact: ayrtonpipo@gmail.com
+                  {t("tellUsAboutYourBrand")}
                </p>
                <ButtonCTA className="text-xl" />
             </div>
