@@ -12,8 +12,8 @@ function getImageUrlForMedia(media: string, width: number, height: number) {
 
 export function WixMediaImage({
   media,
-  height = 320,
-  width = 640,
+  height = 900,
+  width = 1725,
   alt = 'no info available for image',
   className,
   objectFit,
