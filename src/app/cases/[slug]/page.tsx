@@ -25,7 +25,9 @@ export default async function Page(props: PageProps) {
                <WixMediaImage
                   media={gallery[0].src}
                   alt={gallery[0].fileName}
-                  className="w-full rounded-lg hover:scale-100 hover:transform-none transition-none"
+                  disableZoom
+                  objectFit="cover"
+                  className="w-full"
                />
             </section>
          )}
@@ -66,7 +68,9 @@ export default async function Page(props: PageProps) {
                      <WixMediaImage
                         media={caseData.mediaGallery[1].src}
                         alt={caseData.mediaGallery[1].fileName}
-                        className="w-full rounded-lg hover:scale-100 hover:transform-none transition-none"
+                        disableZoom
+                        objectFit="cover"
+                        className="w-full"
                      />
                   )}
                </div>
@@ -78,7 +82,9 @@ export default async function Page(props: PageProps) {
                   <WixMediaImage
                      media={caseData.mediaGallery[2].src}
                      alt={caseData.mediaGallery[2].fileName}
-                     className="w-full rounded-lg hover:scale-100 hover:transform-none transition-none"
+                     disableZoom
+                     objectFit="cover"
+                     className="w-full"
                   />
                )}
             </div>
@@ -102,7 +108,9 @@ export default async function Page(props: PageProps) {
                   <WixMediaImage
                      media={item.src}
                      alt={item.fileName}
-                     className="w-full rounded-lg hover:scale-100 hover:transform-none transition-none"
+                     disableZoom
+                     objectFit="cover"
+                     className="w-full"
                   />
                </div>
             ))}
