@@ -9,7 +9,7 @@ export default function Contact() {
       <HomePageSection className="gap-4">
          <h1 className="text-foreground-secondary text-5xl md:text-6xl">Investment Proposal Form</h1>
          <p>
-            This form is the first step to better understand the project's challenges and objectives, let's get started?
+            This form is the first step to better understand the project&apos;s challenges and objectives, let&apos;s get started?
          </p>
          <form action="" className="flex flex-col gap-8 mt-10">
             <div className="flex flex-col gap-2">
