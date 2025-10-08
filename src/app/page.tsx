@@ -9,6 +9,7 @@ import { OurBrandingProcess } from "@/components/OurBrandingProcess";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { Separator } from "@/components/ui/Separator";
+import { CtaSection } from "@/components/CtaSection";
 
 interface OurBrandingProcessList {
    title: string;
@@ -136,17 +137,7 @@ export default function Home() {
             </div>
          </HomePageSection>
 
-         <HomePageSection hasCTAElement>
-            <div className="flex flex-col items-center justify-center gap-8 w-full md:w-2/3 mx-auto text-center">
-               <h2 className="text-5xl md:text-6xl text-foreground-secondary">
-                  {t("letTalkAboutYourBrand")}
-               </h2>
-               <p>
-                  {t("tellUsAboutYourBrand")}
-               </p>
-               <ButtonCTA className="text-xl" />
-            </div>
-         </HomePageSection>
+         <CtaSection hasCTAElement />
       </>
    );
 }
