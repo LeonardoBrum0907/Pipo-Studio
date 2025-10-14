@@ -1,8 +1,6 @@
 import { createCasesService } from "@/services/cases";
-import { WixMediaImage } from "@/components/WixMediaImage";
 import { CtaSection } from "@/components/CtaSection";
-import { RichContentViewer } from "@/components/RichContentViewer";
-import { getMessages, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 interface PageProps {
    params: { slug: string }
@@ -18,7 +16,7 @@ export default async function Page(props: PageProps) {
       return <h1 className="text-center text-xl mt-10">Case not found</h1>;
    }
 
-   const gallery = caseData.mediaGallery;
+   // const gallery = caseData.mediaGallery;
 
    return (
       // <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 text-gray-800">

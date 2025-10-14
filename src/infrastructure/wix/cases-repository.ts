@@ -2,7 +2,6 @@ import { CasesRepository } from '@/domain/cases/repository';
 import { Case, CaseFilters } from '@/domain/cases/types';
 import { getWixClient } from './client';
 import { RichContent } from '@wix/ricos';
-import { revalidatePath } from 'next/cache';
 import { updateI18nMessages } from '@/app/actions';
 
 interface WixImageDTO {
