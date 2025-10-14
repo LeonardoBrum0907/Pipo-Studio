@@ -1,57 +1,64 @@
 {
-   "homePage": {
-      "title": {
-         "normalWeight": "Nós construímos marcas com",
-         "boldWeight": "sabor, estratégia e presença."
+  "homePage": {
+    "title": {
+      "normalWeight": "Nós construímos marcas com",
+      "boldWeight": "sabor, estratégia e presença."
+    },
+    "ourBrandingProcessTitle": "Nosso Processo de Branding",
+    "ourBrandingProcessDescription": "Passos estruturados que garantem consistência e resultados notáveis.",
+    "ourBrandingProcess": [
+      {
+        "title": "Imersão",
+        "description": "Um mergulho profundo no universo do cliente. Através de entrevistas e análise de contexto, entendemos o negócio, seus diferenciais, público e mercado. Esta etapa fornece uma visão clara das necessidades e oportunidades da marca."
       },
-      "ourBrandingProcessTitle": "Nosso Processo de Branding",
-      "ourBrandingProcessDescription": "Passos estruturados que garantem consistência e resultados notáveis.",
-      "ourBrandingProcess": [
-         {
-            "title": "Imersão",
-            "description": "Um mergulho profundo no universo do cliente. Através de entrevistas e análise de contexto, entendemos o negócio, seus diferenciais, público e mercado. Esta etapa fornece uma visão clara das necessidades e oportunidades da marca."
-         },
-         {
-            "title": "Diagnóstico", 
-            "description": "Organizamos os insights coletados e identificamos pontos-chave: desafios de posicionamento, oportunidades de crescimento e lacunas de comunicação. O diagnóstico é a base estratégica que orienta todas as próximas etapas."
-         },
-         {
-            "title": "Pesquisa & Referências",
-            "description": "Estudamos benchmarks, concorrentes e tendências relevantes. A partir daí, criamos painéis de referência que ajudam a visualizar diferentes territórios criativos para a marca."
-         },
-         {
-            "title": "Chave Verbal",
-            "description": "Definimos o território verbal da marca: tom de voz, mensagens-chave e campos semânticos que a marca deve possuir. Isso garante consistência na comunicação e traduz a essência do negócio em palavras."
-         },
-         {
-            "title": "Chave Visual",
-            "description": "Transformamos estratégia em identidade visual. Logo, cores, tipografia e elementos gráficos são desenvolvidos em sinergia com o território verbal, resultando em uma expressão única e distintiva."
-         },
-         {
-            "title": "Aplicações",
-            "description": "A identidade ganha vida em pontos de contato reais: embalagens, cardápios, sinalização, mídias sociais e materiais digitais. Cada aplicação é projetada para manter consistência e relevância."
-         },
-         {
-            "title": "Manual da Marca",
-            "description": "Consolidamos todas as diretrizes visuais e verbais em um guia completo. O manual garante que a marca permaneça coerente e forte em todas as aplicações futuras."
-         }
-
-      ],
-      "brandsThatTastedOurMethod": "Marcas que experimentaram nosso método",
-      "letTalkAboutYourBrand": "Vamos falar sobre sua marca",
-      "tellUsAboutYourBrand": "Diga-nos sobre sua marca. Juntos construiremos algo consistente e memorável. Para contato direto: ayrtonpipo@gmail.com",
-      "cta": "Inicie seu projeto",
-      "arrow": "Role para baixo",
-      "about": "sobre.",
-      "cases": "cases.",
-      "contact": "contato."
-   },
-   "casesPage": {
-      "title": "Cases",
-      "description": "Confira os principais projetos de Identidade Visual desenvolvidos aqui no estúdio. Sempre trabalhamos em grande colaboração com nossos clientes, buscando alcançar o melhor resultado possível para o projeto e, assim, posicionar cada marca de forma única."
-   },
-   "locales": {
-      "en": "Inglês",
-      "pt-BR": "Português"
-   }
+      {
+        "title": "Diagnóstico",
+        "description": "Organizamos os insights coletados e identificamos pontos-chave: desafios de posicionamento, oportunidades de crescimento e lacunas de comunicação. O diagnóstico é a base estratégica que orienta todas as próximas etapas."
+      },
+      {
+        "title": "Pesquisa & Referências",
+        "description": "Estudamos benchmarks, concorrentes e tendências relevantes. A partir daí, criamos painéis de referência que ajudam a visualizar diferentes territórios criativos para a marca."
+      },
+      {
+        "title": "Chave Verbal",
+        "description": "Definimos o território verbal da marca: tom de voz, mensagens-chave e campos semânticos que a marca deve possuir. Isso garante consistência na comunicação e traduz a essência do negócio em palavras."
+      },
+      {
+        "title": "Chave Visual",
+        "description": "Transformamos estratégia em identidade visual. Logo, cores, tipografia e elementos gráficos são desenvolvidos em sinergia com o território verbal, resultando em uma expressão única e distintiva."
+      },
+      {
+        "title": "Aplicações",
+        "description": "A identidade ganha vida em pontos de contato reais: embalagens, cardápios, sinalização, mídias sociais e materiais digitais. Cada aplicação é projetada para manter consistência e relevância."
+      },
+      {
+        "title": "Manual da Marca",
+        "description": "Consolidamos todas as diretrizes visuais e verbais em um guia completo. O manual garante que a marca permaneça coerente e forte em todas as aplicações futuras."
+      }
+    ],
+    "brandsThatTastedOurMethod": "Marcas que experimentaram nosso método",
+    "letTalkAboutYourBrand": "Vamos falar sobre sua marca",
+    "tellUsAboutYourBrand": "Diga-nos sobre sua marca. Juntos construiremos algo consistente e memorável. Para contato direto: ayrtonpipo@gmail.com",
+    "cta": "Inicie seu projeto",
+    "arrow": "Role para baixo",
+    "about": "sobre.",
+    "cases": "cases.",
+    "contact": "contato."
+  },
+  "casesPage": {
+    "title": "Cases",
+    "description": "Confira os principais projetos de Identidade Visual desenvolvidos aqui no estúdio. Sempre trabalhamos em grande colaboração com nossos clientes, buscando alcançar o melhor resultado possível para o projeto e, assim, posicionar cada marca de forma única."
+  },
+  "caseDinamicPage": {
+    "teste": {
+      "richtext": "<h2 class=\"font_2\">Scoop Português</h2>\n<h6 class=\"font_6\">Scoop English</h6>\n<p class=\"font_8\">Scoop of Blessing é uma sorveteria artesanal que combina tradição italiana com ingredientes brasileiros premium. O desafio era criar uma identidade que transmitisse a fusão única entre o método gelato tradicional e a riqueza dos sabores tropicais, enquanto mantivesse uma estética sofisticada e acolhedora. A marca precisava se destacar em um mercado competitivo de sobremesas gourmet, comunicando tanto qualidade artesanal quanto inovação em sabores.</p>\n<p class=\"font_8\"><br></p>\n<p class=\"font_8\">Scoop of Blessing é uma sorveteria artesanal que combina tradição italiana com ingredientes brasileiros premium. O desafio era criar uma identidade que transmitisse a fusão única entre o método gelato tradicional e a riqueza dos sabores tropicais, enquanto mantivesse uma estética sofisticada e acolhedora. A marca precisava se destacar em um mercado competitivo de sobremesas gourmet, comunicando tanto qualidade artesanal quanto inovação em sabores.</p>\n<p class=\"font_8\"><br></p>\n<p class=\"font_8\">Scoop of Blessing é uma sorveteria artesanal que combina tradição italiana com ingredientes brasileiros premium. O desafio era criar uma identidade que transmitisse a fusão única entre o método gelato tradicional e a riqueza dos sabores tropicais, enquanto mantivesse uma estética sofisticada e acolhedora. A marca precisava se destacar em um mercado competitivo de sobremesas gourmet, comunicando tanto qualidade artesanal quanto inovação em sabores.</p>\n<p class=\"font_8\"><br></p>\n<h2 class=\"font_2\">Blessing Português</h2>\n<p class=\"font_8\">Nossa solução de branding focou em uma paleta que mescla tons terrosos profundos com acentos vibrantes inspirados nas frutas brasileiras, criando um contraste que remete à dualidade tradição-inovação. Desenvolvemos um sistema visual que utiliza ilustrações botânicas estilizadas das frutas locais, combinadas com uma tipografia que evoca as antigas sorveterias italianas. O resultado é uma identidade que posiciona o Scoop of Blessing como uma experiência premium de gelato, onde a expertise italiana encontra a exuberância dos ingredientes brasileiros.</p>"
+    },
+    "scoop-of-blessing": {
+      "richtext": "<h5 class=\"font_5\">Scoop</h5>\n<p class=\"font_8\">Scoop of Blessing é uma sorveteria artesanal que combina tradição italiana com ingredientes brasileiros premium. O desafio era criar uma identidade que transmitisse a fusão única entre o método gelato tradicional e a riqueza dos sabores tropicais, enquanto mantivesse uma estética sofisticada e acolhedora. A marca precisava se destacar em um mercado competitivo de sobremesas gourmet, comunicando tanto qualidade artesanal quanto inovação em sabores.</p>\n<p class=\"font_8\"><br></p>\n<h5 class=\"font_5\">Blessing</h5>\n<p class=\"font_8\">Nossa solução de branding focou em uma paleta que mescla tons terrosos profundos com acentos vibrantes inspirados nas frutas brasileiras, criando um contraste que remete à dualidade tradição-inovação. Desenvolvemos um sistema visual que utiliza ilustrações botânicas estilizadas das frutas locais, combinadas com uma tipografia que evoca as antigas sorveterias italianas. O resultado é uma identidade que posiciona o Scoop of Blessing como uma experiência premium de gelato, onde a expertise italiana encontra a exuberância dos ingredientes brasileiros.</p>"
+    }
+  },
+  "locales": {
+    "en": "Inglês",
+    "pt-BR": "Português"
+  }
 }

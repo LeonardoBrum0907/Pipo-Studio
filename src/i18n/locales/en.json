@@ -1,57 +1,68 @@
 {
-   "homePage": {
-      "title": {
-         "normalWeight": "We build brands with",
-         "boldWeight": "flavor, strategy, and presence."
+  "homePage": {
+    "title": {
+      "normalWeight": "We build brands with",
+      "boldWeight": "flavor, strategy, and presence."
+    },
+    "ourBrandingProcessTitle": "Our Branding Process",
+    "ourBrandingProcessDescription": "Structured steps that guarantee consistency and remarkable results.",
+    "ourBrandingProcess": [
+      {
+        "title": "Immersion",
+        "description": "A deep dive into the client’s universe. Through interviews and context analysis, we understand the business, its differentiators, audience, and market. This stage provides a clear view of the brand’s needs and opportunities."
       },
-      "ourBrandingProcessTitle": "Our Branding Process",
-      "ourBrandingProcessDescription": "Structured steps that guarantee consistency and remarkable results.",
-      "ourBrandingProcess": [
-         {
-            "title": "Immersion",
-            "description": "A deep dive into the client’s universe. Through interviews and context analysis, we understand the business, its differentiators, audience, and market. This stage provides a clear view of the brand’s needs and opportunities."
-         },
-         {
-            "title": "Diagnosis",
-            "description": "We organize the insights collected and identify key points: positioning challenges, growth opportunities, and communication gaps. The diagnosis is the strategic foundation that guides all the next stages."
-         },
-         {
-            "title": "Research & References",
-            "description": "We study benchmarks, competitors, and relevant trends. From there, we create reference boards that help visualize different creative territories for the brand."
-         },
-         {
-            "title": "Verbal Key",
-            "description": "We define the brand’s verbal territory: tone of voice, key messages, and semantic fields the brand should own. This ensures consistency in communication and translates the essence of the business into words."
-         },
-         {
-            "title": "Visual Key",
-            "description": "We turn strategy into visual identity. Logo, colors, typography, and graphic elements are developed in synergy with the verbal territory, resulting in a unique and distinctive expression."
-         },
-         {
-            "title": "Applications",
-            "description": "The identity comes to life in real touchpoints: packaging, menus, signage, social media, and digital materials. Each application is designed to maintain consistency and relevance."
-         },
-         {
-            "title": "Brand Guidelines",
-            "description": "We consolidate all visual and verbal directions into a complete guide. The manual ensures the brand remains coherent and strong across all future applications."
-         }
-
-      ],
-      "brandsThatTastedOurMethod": "Brands that tasted our method",
-      "letTalkAboutYourBrand": "Let’s talk about your brand",
-      "tellUsAboutYourBrand": "Tell us about your brand. Together we’ll build something consistent and memorable. For direct contact: ayrtonpipo@gmail.com",
-      "cta": "Start your project",
-      "arrow": "Scroll down",
-      "about": "about.",
-      "cases": "cases.",
-      "contact": "contact."
-   },
-   "casesPage": {
-      "title": "Cases",
-      "description": "Check out the main Visual Identity projects developed here at the studio. We always work through great collaboration with our clients, aiming to achieve the best possible result for the project and thus position each brand in a unique way."
-   },
-   "locales": {
-      "en": "English",
-      "pt-BR": "Portuguese"
-   }
+      {
+        "title": "Diagnosis",
+        "description": "We organize the insights collected and identify key points: positioning challenges, growth opportunities, and communication gaps. The diagnosis is the strategic foundation that guides all the next stages."
+      },
+      {
+        "title": "Research & References",
+        "description": "We study benchmarks, competitors, and relevant trends. From there, we create reference boards that help visualize different creative territories for the brand."
+      },
+      {
+        "title": "Verbal Key",
+        "description": "We define the brand’s verbal territory: tone of voice, key messages, and semantic fields the brand should own. This ensures consistency in communication and translates the essence of the business into words."
+      },
+      {
+        "title": "Visual Key",
+        "description": "We turn strategy into visual identity. Logo, colors, typography, and graphic elements are developed in synergy with the verbal territory, resulting in a unique and distinctive expression."
+      },
+      {
+        "title": "Applications",
+        "description": "The identity comes to life in real touchpoints: packaging, menus, signage, social media, and digital materials. Each application is designed to maintain consistency and relevance."
+      },
+      {
+        "title": "Brand Guidelines",
+        "description": "We consolidate all visual and verbal directions into a complete guide. The manual ensures the brand remains coherent and strong across all future applications."
+      }
+    ],
+    "brandsThatTastedOurMethod": "Brands that tasted our method",
+    "letTalkAboutYourBrand": "Let’s talk about your brand",
+    "tellUsAboutYourBrand": "Tell us about your brand. Together we’ll build something consistent and memorable. For direct contact: ayrtonpipo@gmail.com",
+    "cta": "Start your project",
+    "arrow": "Scroll down",
+    "about": "about.",
+    "cases": "cases.",
+    "contact": "contact."
+  },
+  "casesPage": {
+    "title": "Cases",
+    "description": "Check out the main Visual Identity projects developed here at the studio. We always work through great collaboration with our clients, aiming to achieve the best possible result for the project and thus position each brand in a unique way."
+  },
+  "caseDinamicPage": {
+    "teste": {
+      "richtext": "<h2 class=\"font_2\">Scoop English</h2>\n<h6 class=\"font_6\">Scoop English</h6>\n<p class=\"font_8\">Scoop of Blessing is an artisanal ice cream shop that combines Italian tradition with premium Brazilian ingredients. The challenge was to create an identity that conveyed the unique fusion between traditional gelato methods and the richness of tropical flavors, while maintaining a sophisticated and welcoming aesthetic. The brand needed to stand out in a competitive gourmet dessert market, communicating both artisanal quality and flavor innovation.</p>\n<p class=\"font_8\"><br></p>\n<p class=\"font_8\">Scoop of Blessing is an artisanal ice cream shop that combines Italian tradition with premium Brazilian ingredients. The challenge was to create an identity that conveyed the unique fusion between traditional gelato methods and the richness of tropical flavors, while maintaining a sophisticated and welcoming aesthetic. The brand needed to stand out in a competitive gourmet dessert market, communicating both artisanal quality and flavor innovation.</p>\n<p class=\"font_8\"><br></p>\n<p class=\"font_8\">Scoop of Blessing is an artisanal ice cream shop that combines Italian tradition with premium Brazilian ingredients. The challenge was to create an identity that conveyed the unique fusion between traditional gelato methods and the richness of tropical flavors, while maintaining a sophisticated and welcoming aesthetic. The brand needed to stand out in a competitive gourmet dessert market, communicating both artisanal quality and flavor innovation.</p>\n<p class=\"font_8\"><br></p>\n<h2 class=\"font_2\">Blessing English</h2>\n<p class=\"font_8\">Our branding solution focused on a palette that blends deep earthy tones with vibrant accents inspired by Brazilian fruits, creating a contrast that reflects the duality of tradition and innovation. We developed a visual system that uses stylized botanical illustrations of local fruits, combined with typography that evokes old Italian ice cream parlors. The result is an identity that positions Scoop of Blessing as a premium gelato experience, where Italian expertise meets the exuberance of Brazilian ingredients.</p>"
+    },
+    "scoop-of-blessing": {
+      "richtext": "<h5 class=\"font_5\">Scoop</h5>\n<p class=\"font_8\">Scoop of Blessing is an artisanal ice cream shop that combines Italian tradition with premium Brazilian ingredients. The challenge was to create an identity that conveyed the unique fusion between traditional gelato methods and the richness of tropical flavors, while maintaining a sophisticated and welcoming aesthetic. The brand needed to stand out in a competitive gourmet dessert market, communicating both artisanal quality and flavor innovation.</p>\n<p class=\"font_8\"><br></p>\n<h5 class=\"font_5\">Blessing</h5>\n<p class=\"font_8\">Our branding solution focused on a palette that blends deep earthy tones with vibrant accents inspired by Brazilian fruits, creating a contrast that reflects the duality of tradition and innovation. We developed a visual system that uses stylized botanical illustrations of local fruits, combined with typography that evokes old Italian ice cream parlors. The result is an identity that positions Scoop of Blessing as a premium gelato experience, where Italian expertise meets the exuberance of Brazilian ingredients.</p>"
+    }
+  },
+  "descries": {
+    "en": "english descriptions",
+    "pt": "descrições em português"
+  },
+  "locales": {
+    "en": "English",
+    "pt-BR": "Portuguese"
+  }
 }
