@@ -3,6 +3,8 @@
 import path from "path"
 import { Locale } from "@/i18n/config"
 import fs from 'fs/promises'
+import { put } from '@vercel/blob'
+import { invalidateTranslationsCache, areMessagesDifferent } from '@/services/translations-cache'
 
 interface CaseContent {
    slug: string
@@ -25,32 +27,32 @@ export async function updateI18nMessages(locale: Locale, cases: CaseContent[]) {
       }
    })
 
-   let tmpDir = path.join(process.cwd(), 'src/i18n/locales/tmp')
-
-   if (process.env.NODE_ENV !== 'development') {
-      tmpDir = path.join("/tmp")
-   }
-
    try {
-      await fs.access(tmpDir)
-      console.log('tmpDir found.');
-   } catch {
-      console.log('tmpDir not found, creating...');
+      // Verifica se as mensagens são diferentes antes de atualizar
+      const isDifferent = await areMessagesDifferent(locale, messages)
+      
+      if (!isDifferent) {
+         console.log(`Mensagens para ${locale} são idênticas às existentes, pulando atualização do blob`)
+         return
+      }
+      
+      // Salva no Vercel Blob apenas se as mensagens forem diferentes
+      const blobName = `i18n/tmp/${locale}.json`
+      const blobContent = JSON.stringify(messages, null, 2)
+      
+      await put(blobName, blobContent, {
+         access: 'public',
+         addRandomSuffix: false, // Mantém o nome consistente
+         allowOverwrite: true,
+      })
+      
+      console.log(`Traduções temporárias salvas no Blob: ${blobName}`)
+      
+      // Invalida o cache para forçar recarregamento
+      invalidateTranslationsCache(locale)
+      
+   } catch (error) {
+      console.error('Erro ao salvar no Vercel Blob:', error)
+      throw new Error('Falha ao salvar traduções temporárias')
    }
-
-   // Salva o arquivo na pasta tmp
-   const tmpFilePath = path.join(tmpDir, `${locale}.json`)
-   await fs.writeFile(tmpFilePath, JSON.stringify(messages, null, 2))
-
-
-   // try {
-   //    if(process.env.NODE_ENV !== 'development') {
-   //       tmpDir = path.join("/tmp")
-   //    }
-   //    await fs.access(tmpDir)
-   //    console.log('tmpDir', tmpDir);
-   // } catch {
-   //    console.log('tmpDir not found.');
-   //    // await fs.mkdir(tmpDir)
-   // }
 }

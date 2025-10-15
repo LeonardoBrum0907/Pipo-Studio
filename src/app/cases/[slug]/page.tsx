@@ -11,8 +11,8 @@ export default async function Page(props: PageProps) {
    const casesService = createCasesService();
    const caseData = await casesService.getCaseBySlug(slug);
    const t = await getTranslations('caseDinamicPage');
-   const messages = await getMessages();
-   console.log(messages);
+   // const messages = await getMessages();
+   // console.log(messages);
 
    if (!caseData) {
       return <h1 className="text-center text-xl mt-10">Case not found</h1>;

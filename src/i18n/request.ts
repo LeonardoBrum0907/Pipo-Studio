@@ -1,59 +1,13 @@
 import { getRequestConfig } from "next-intl/server";
 import { getUserLocale } from "@/services/locale";
-import path from "path";
-import fs from 'fs/promises'
-
-async function fileExists(filePath: string): Promise<boolean> {
-   try {
-      await fs.access(filePath)
-      return true
-   } catch {
-      return false
-   }
-}
+import { getTemporaryTranslations } from "@/services/translations-cache";
 
 export default getRequestConfig(async () => {
    const locale = await getUserLocale();
    const messages = (await import(`@/i18n/locales/${locale}.json`)).default
-   let tmpMessages = { default: {} };
-   let tmpDir = path.join(process.cwd(), 'src/i18n/locales/tmp')
    
-   if (process.env.NODE_ENV !== 'development') {
-      tmpDir = path.join("/tmp")
-   }
-         
-   try {
-      await fs.access(tmpDir)
-      console.log('temp folder found.');
-
-      const tmpFilePath = path.join(`${tmpDir}/${locale}.json`)
-
-      console.log('tmpFilePath', await fileExists(tmpFilePath));
-
-      if(await fileExists(tmpFilePath)) {
-         tmpMessages = (await import(`${tmpFilePath}`)).default;
-      }
-
-   } catch {
-      console.log(`temp folder not found: ${tmpDir}, creating...`);
-      // await fs.mkdir(tmpDir)
-   }
-
-
-
-   // if (process.env.NODE_ENV === 'development' && await fileExists(tmpFilePath)) {
-   //    try {
-   //       tmpMessages = (await import(`@/i18n/locales/tmp/${locale}.json`)).default;
-   //    } catch (error: any) {
-   //       console.warn('Failed to load tmp messages:', error.message);
-   //    }
-   // } else if (process.env.NODE_ENV !== 'development' && await fileExists(tmpFilePath)) {
-   //    try {
-   //       tmpMessages = (await import(`${tmpFilePath}`)).default;
-   //    } catch (error: any) {
-   //       console.warn('Failed to load tmp messages:', error.message);
-   //    }
-   // }
+   // Carrega traduções temporárias usando cache otimizado
+   const tmpMessages = await getTemporaryTranslations(locale)
 
    return {
       locale,
