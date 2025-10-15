@@ -30,22 +30,22 @@ export default getRequestConfig(async () => {
       await fs.mkdir(tmpDir)
    }
 
-   let tmpFilePath = path.join(`${tmpDir}/${locale}.json`)
+   // let tmpFilePath = path.join(`${tmpDir}/${locale}.json`)
 
 
-   if (process.env.NODE_ENV === 'development' && await fileExists(tmpFilePath)) {
-      try {
-         tmpMessages = (await import(`@/i18n/locales/tmp/${locale}.json`)).default;
-      } catch (error: any) {
-         console.warn('Failed to load tmp messages:', error.message);
-      }
-   } else if (process.env.NODE_ENV !== 'development' && await fileExists(tmpFilePath)) {
-      try {
-         tmpMessages = (await import(`${tmpFilePath}`)).default;
-      } catch (error: any) {
-         console.warn('Failed to load tmp messages:', error.message);
-      }
-   }
+   // if (process.env.NODE_ENV === 'development' && await fileExists(tmpFilePath)) {
+   //    try {
+   //       tmpMessages = (await import(`@/i18n/locales/tmp/${locale}.json`)).default;
+   //    } catch (error: any) {
+   //       console.warn('Failed to load tmp messages:', error.message);
+   //    }
+   // } else if (process.env.NODE_ENV !== 'development' && await fileExists(tmpFilePath)) {
+   //    try {
+   //       tmpMessages = (await import(`${tmpFilePath}`)).default;
+   //    } catch (error: any) {
+   //       console.warn('Failed to load tmp messages:', error.message);
+   //    }
+   // }
 
    return {
       locale,
