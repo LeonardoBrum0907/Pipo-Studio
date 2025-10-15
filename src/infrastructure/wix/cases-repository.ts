@@ -1,7 +1,6 @@
 import { CasesRepository } from '@/domain/cases/repository';
 import { Case, CaseFilters } from '@/domain/cases/types';
 import { getWixClient } from './client';
-import { RichContent } from '@wix/ricos';
 import { updateI18nMessages } from '@/app/actions';
 
 interface WixImageDTO {
@@ -22,7 +21,6 @@ interface WixCaseDTO {
    launchDate: string;
    mediagallery?: WixImageDTO[];
    projectName: string;
-   richcontent: RichContent;
    portugueseDescriptions: string;
    englishDescriptions: string;
    projectDescription: string;
@@ -40,7 +38,6 @@ const mapWixCaseToCase = (wixCase: WixCaseDTO): Case => {
       mediaGallery: Array.isArray(wixCase.mediagallery)
          ? wixCase.mediagallery.map(item => item as WixImageDTO)
          : [],
-      richContent: wixCase.richcontent,
       englishDescriptions: wixCase.englishDescriptions,
       portugueseDescriptions: wixCase.portugueseDescriptions,
       slug: wixCase.projectName.toLowerCase().replace(/\s+/g, '-'),

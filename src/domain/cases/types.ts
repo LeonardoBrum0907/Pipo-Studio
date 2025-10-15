@@ -1,5 +1,3 @@
-import { RichContent } from '@wix/ricos';
-
 interface Image {
   alt: string;
   fileName: string;
@@ -20,7 +18,6 @@ export interface Case {
   brandLogo: string;
   mediaGallery: Image[];
   slug: string;
-  richContent: RichContent;
   englishDescriptions: string;
   portugueseDescriptions: string;
 }
