@@ -17,7 +17,6 @@ export default getRequestConfig(async () => {
    const messages = (await import(`@/i18n/locales/${locale}.json`)).default
    let tmpMessages = { default: {} };
    let tmpDir = path.join(process.cwd(), 'src/i18n/locales/tmp')
-   let tmpFilePath = path.join(`${tmpDir}/${locale}.json`)
    
    if (process.env.NODE_ENV !== 'development') {
       tmpDir = path.join("/tmp")
@@ -31,9 +30,18 @@ export default getRequestConfig(async () => {
       await fs.mkdir(tmpDir)
    }
 
-   if (await fileExists(tmpFilePath)) {
+   let tmpFilePath = path.join(`${tmpDir}/${locale}.json`)
+
+
+   if (process.env.NODE_ENV === 'development' && await fileExists(tmpFilePath)) {
       try {
          tmpMessages = (await import(`@/i18n/locales/tmp/${locale}.json`)).default;
+      } catch (error: any) {
+         console.warn('Failed to load tmp messages:', error.message);
+      }
+   } else if (process.env.NODE_ENV !== 'development' && await fileExists(tmpFilePath)) {
+      try {
+         tmpMessages = (await import(`${tmpFilePath}`)).default;
       } catch (error: any) {
          console.warn('Failed to load tmp messages:', error.message);
       }
