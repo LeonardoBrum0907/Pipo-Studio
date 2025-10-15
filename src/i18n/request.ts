@@ -15,7 +15,7 @@ async function fileExists(filePath: string): Promise<boolean> {
 export default getRequestConfig(async () => {
    const locale = await getUserLocale();
    const messages = (await import(`@/i18n/locales/${locale}.json`)).default
-   const tmpMessages = { default: {} };
+   let tmpMessages = { default: {} };
    let tmpDir = path.join(process.cwd(), 'src/i18n/locales/tmp')
    
    if (process.env.NODE_ENV !== 'development') {
@@ -29,6 +29,10 @@ export default getRequestConfig(async () => {
       const tmpFilePath = path.join(`${tmpDir}/${locale}.json`)
 
       console.log('tmpFilePath', await fileExists(tmpFilePath));
+
+      if(await fileExists(tmpFilePath)) {
+         tmpMessages = (await import(`${tmpFilePath}`)).default;
+      }
 
    } catch {
       console.log(`temp folder not found: ${tmpDir}, creating...`);
