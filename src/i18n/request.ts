@@ -15,7 +15,7 @@ async function fileExists(filePath: string): Promise<boolean> {
 export default getRequestConfig(async () => {
    const locale = await getUserLocale();
    const messages = (await import(`@/i18n/locales/${locale}.json`)).default
-   let tmpMessages = { default: {} };
+   const tmpMessages = { default: {} };
    let tmpDir = path.join(process.cwd(), 'src/i18n/locales/tmp')
    
    if (process.env.NODE_ENV !== 'development') {
