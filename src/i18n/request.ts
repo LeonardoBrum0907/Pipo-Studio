@@ -23,14 +23,18 @@ export default getRequestConfig(async () => {
    }
          
    try {
-      console.log('temp folder found.');
       await fs.access(tmpDir)
+      console.log('temp folder found.');
+
+      const tmpFilePath = path.join(`${tmpDir}/${locale}.json`)
+
+      console.log('tmpFilePath', await fileExists(tmpFilePath));
+
    } catch {
       console.log(`temp folder not found: ${tmpDir}, creating...`);
-      await fs.mkdir(tmpDir)
+      // await fs.mkdir(tmpDir)
    }
 
-   // let tmpFilePath = path.join(`${tmpDir}/${locale}.json`)
 
 
    // if (process.env.NODE_ENV === 'development' && await fileExists(tmpFilePath)) {
