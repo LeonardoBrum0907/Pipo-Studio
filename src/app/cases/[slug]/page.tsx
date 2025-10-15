@@ -7,7 +7,7 @@ interface PageProps {
 }
 
 export default async function Page(props: PageProps) {
-   const { slug } = props.params;
+   const { slug } = await props.params;
    const casesService = createCasesService();
    const caseData = await casesService.getCaseBySlug(slug);
    const t = await getTranslations('caseDinamicPage');

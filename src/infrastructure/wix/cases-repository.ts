@@ -68,24 +68,27 @@ export class WixCasesRepository implements CasesRepository {
       }
 
       const { items } = await query.find();
-      console.log('items', items);
-      return (items as WixCaseDTO[]).map(mapWixCaseToCase);
+      // console.log('items', items);
+      const cases = (items as WixCaseDTO[]).map(mapWixCaseToCase);
+
+      // Atualiza os arquivos de tradução com todos os cases
+      await Promise.all([
+         updateI18nMessages('pt-BR', cases.map(caseData => ({
+            slug: caseData.slug,
+            richText: caseData.portugueseDescriptions,
+         }))),
+         updateI18nMessages('en', cases.map(caseData => ({
+            slug: caseData.slug,
+            richText: caseData.englishDescriptions,
+         })))
+      ]);
+
+      return cases;
    }
 
    async findBySlug(slug: string): Promise<Case | null> {
       const cases = await this.findAll();
-      const caseData = cases.find(c => c.slug === slug) || null;
-      if (caseData) {
-         await Promise.all([
-            updateI18nMessages('pt-BR', slug, {
-               richText: caseData.portugueseDescriptions,
-            }),
-            updateI18nMessages('en', slug, {
-               richText: caseData.englishDescriptions,
-            })
-         ])
-      }
-      return caseData;
+      return cases.find(c => c.slug === slug) || null;
    }
 
    async findById(id: string): Promise<Case | null> {

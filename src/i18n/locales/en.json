@@ -9,7 +9,7 @@
     "ourBrandingProcess": [
       {
         "title": "Immersion",
-        "description": "A deep dive into the client’s universe. Through interviews and context analysis, we understand the business, its differentiators, audience, and market. This stage provides a clear view of the brand’s needs and opportunities."
+        "description": "A deep dive into the client's universe. Through interviews and context analysis, we understand the business, its differentiators, audience, and market. This stage provides a clear view of the brand's needs and opportunities."
       },
       {
         "title": "Diagnosis",
@@ -21,7 +21,7 @@
       },
       {
         "title": "Verbal Key",
-        "description": "We define the brand’s verbal territory: tone of voice, key messages, and semantic fields the brand should own. This ensures consistency in communication and translates the essence of the business into words."
+        "description": "We define the brand's verbal territory: tone of voice, key messages, and semantic fields the brand should own. This ensures consistency in communication and translates the essence of the business into words."
       },
       {
         "title": "Visual Key",
@@ -37,8 +37,8 @@
       }
     ],
     "brandsThatTastedOurMethod": "Brands that tasted our method",
-    "letTalkAboutYourBrand": "Let’s talk about your brand",
-    "tellUsAboutYourBrand": "Tell us about your brand. Together we’ll build something consistent and memorable. For direct contact: ayrtonpipo@gmail.com",
+    "letTalkAboutYourBrand": "Let's talk about your brand",
+    "tellUsAboutYourBrand": "Tell us about your brand. Together we'll build something consistent and memorable. For direct contact: ayrtonpipo@gmail.com",
     "cta": "Start your project",
     "arrow": "Scroll down",
     "about": "about.",
@@ -49,18 +49,7 @@
     "title": "Cases",
     "description": "Check out the main Visual Identity projects developed here at the studio. We always work through great collaboration with our clients, aiming to achieve the best possible result for the project and thus position each brand in a unique way."
   },
-  "caseDinamicPage": {
-    "teste": {
-      "richtext": "<h2 class=\"font_2\">Scoop English</h2>\n<h6 class=\"font_6\">Scoop English</h6>\n<p class=\"font_8\">Scoop of Blessing is an artisanal ice cream shop that combines Italian tradition with premium Brazilian ingredients. The challenge was to create an identity that conveyed the unique fusion between traditional gelato methods and the richness of tropical flavors, while maintaining a sophisticated and welcoming aesthetic. The brand needed to stand out in a competitive gourmet dessert market, communicating both artisanal quality and flavor innovation.</p>\n<p class=\"font_8\"><br></p>\n<p class=\"font_8\">Scoop of Blessing is an artisanal ice cream shop that combines Italian tradition with premium Brazilian ingredients. The challenge was to create an identity that conveyed the unique fusion between traditional gelato methods and the richness of tropical flavors, while maintaining a sophisticated and welcoming aesthetic. The brand needed to stand out in a competitive gourmet dessert market, communicating both artisanal quality and flavor innovation.</p>\n<p class=\"font_8\"><br></p>\n<p class=\"font_8\">Scoop of Blessing is an artisanal ice cream shop that combines Italian tradition with premium Brazilian ingredients. The challenge was to create an identity that conveyed the unique fusion between traditional gelato methods and the richness of tropical flavors, while maintaining a sophisticated and welcoming aesthetic. The brand needed to stand out in a competitive gourmet dessert market, communicating both artisanal quality and flavor innovation.</p>\n<p class=\"font_8\"><br></p>\n<h2 class=\"font_2\">Blessing English</h2>\n<p class=\"font_8\">Our branding solution focused on a palette that blends deep earthy tones with vibrant accents inspired by Brazilian fruits, creating a contrast that reflects the duality of tradition and innovation. We developed a visual system that uses stylized botanical illustrations of local fruits, combined with typography that evokes old Italian ice cream parlors. The result is an identity that positions Scoop of Blessing as a premium gelato experience, where Italian expertise meets the exuberance of Brazilian ingredients.</p>"
-    },
-    "scoop-of-blessing": {
-      "richtext": "<h5 class=\"font_5\">Scoop</h5>\n<p class=\"font_8\">Scoop of Blessing is an artisanal ice cream shop that combines Italian tradition with premium Brazilian ingredients. The challenge was to create an identity that conveyed the unique fusion between traditional gelato methods and the richness of tropical flavors, while maintaining a sophisticated and welcoming aesthetic. The brand needed to stand out in a competitive gourmet dessert market, communicating both artisanal quality and flavor innovation.</p>\n<p class=\"font_8\"><br></p>\n<h5 class=\"font_5\">Blessing</h5>\n<p class=\"font_8\">Our branding solution focused on a palette that blends deep earthy tones with vibrant accents inspired by Brazilian fruits, creating a contrast that reflects the duality of tradition and innovation. We developed a visual system that uses stylized botanical illustrations of local fruits, combined with typography that evokes old Italian ice cream parlors. The result is an identity that positions Scoop of Blessing as a premium gelato experience, where Italian expertise meets the exuberance of Brazilian ingredients.</p>"
-    }
-  },
-  "descries": {
-    "en": "english descriptions",
-    "pt": "descrições em português"
-  },
+  "caseDinamicPage": {},
   "locales": {
     "en": "English",
     "pt-BR": "Portuguese"
