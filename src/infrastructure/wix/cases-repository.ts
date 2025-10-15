@@ -1,6 +1,8 @@
 import { CasesRepository } from '@/domain/cases/repository';
 import { Case, CaseFilters } from '@/domain/cases/types';
 import { getWixClient } from './client';
+import { RichContent } from '@wix/ricos';
+import { updateI18nMessages } from '@/app/actions';
 
 interface WixImageDTO {
    alt: string;
@@ -20,6 +22,9 @@ interface WixCaseDTO {
    launchDate: string;
    mediagallery?: WixImageDTO[];
    projectName: string;
+   richcontent: RichContent;
+   portugueseDescriptions: string;
+   englishDescriptions: string;
    projectDescription: string;
    _id: string;
 }
@@ -35,6 +40,9 @@ const mapWixCaseToCase = (wixCase: WixCaseDTO): Case => {
       mediaGallery: Array.isArray(wixCase.mediagallery)
          ? wixCase.mediagallery.map(item => item as WixImageDTO)
          : [],
+      richContent: wixCase.richcontent,
+      englishDescriptions: wixCase.englishDescriptions,
+      portugueseDescriptions: wixCase.portugueseDescriptions,
       slug: wixCase.projectName.toLowerCase().replace(/\s+/g, '-'),
    };
 };
@@ -60,8 +68,22 @@ export class WixCasesRepository implements CasesRepository {
       }
 
       const { items } = await query.find();
-      console.log('items', items);
-      return (items as WixCaseDTO[]).map(mapWixCaseToCase);
+      // console.log('items', items);
+      const cases = (items as WixCaseDTO[]).map(mapWixCaseToCase);
+
+      // Atualiza os arquivos de tradução com todos os cases
+      await Promise.all([
+         updateI18nMessages('pt-BR', cases.map(caseData => ({
+            slug: caseData.slug,
+            richText: caseData.portugueseDescriptions,
+         }))),
+         updateI18nMessages('en', cases.map(caseData => ({
+            slug: caseData.slug,
+            richText: caseData.englishDescriptions,
+         })))
+      ]);
+
+      return cases;
    }
 
    async findBySlug(slug: string): Promise<Case | null> {
