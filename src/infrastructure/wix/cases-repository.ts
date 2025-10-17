@@ -16,6 +16,8 @@ interface WixImageDTO {
 // DTO retornado pelo Wix
 interface WixCaseDTO {
    brandLogo: string;
+   englishDescriptions: string;
+   portugueseDescriptions: string;
    companyName: string;
    launchDate: string;
    mediagallery?: WixImageDTO[];
@@ -30,6 +32,8 @@ const mapWixCaseToCase = (wixCase: WixCaseDTO): Case => {
       id: wixCase._id,
       projectName: wixCase.projectName,
       companyName: wixCase.companyName,
+      englishDescription: wixCase.englishDescriptions,
+      portugueseDescription: wixCase.portugueseDescriptions,
       projectDescription: wixCase.projectDescription,
       brandLogo: wixCase.brandLogo,
       mediaGallery: Array.isArray(wixCase.mediagallery)

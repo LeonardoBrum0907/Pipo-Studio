@@ -158,4 +158,12 @@ body {
    body {
       @apply bg-background text-foreground;
    }
+
+   .font_1, .font_2, .font_3, .font_4, .font_5 {
+      @apply text-foreground-secondary text-5xl md:text-6xl;
+   }
+
+   .font_6 {
+      @apply text-foreground md:text-3xl;
+   }
 }
