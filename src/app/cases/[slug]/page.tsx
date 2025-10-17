@@ -3,6 +3,7 @@ import { WixMediaImage } from "@/components/WixMediaImage";
 import { CtaSection } from "@/components/CtaSection";
 import { getLocale } from "next-intl/server";
 import { SafeHTML } from "@/components/SafeHTML";
+import { HomePageSection } from "@/components/HomePageSection";
 
 interface PageProps {
    params: { slug: string }
@@ -21,10 +22,10 @@ export default async function Page(props: PageProps) {
    const gallery = caseData.mediaGallery;
 
    return (
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 text-gray-800">
+      <HomePageSection>
          {/* MediaGallery0 */}
          {gallery[0] && (
-            <section className="mb-12 text-center">
+            <div className="mb-12 text-center">
                <WixMediaImage
                   media={gallery[0].src}
                   alt={gallery[0].fileName}
@@ -32,10 +33,10 @@ export default async function Page(props: PageProps) {
                   objectFit="cover"
                   className="w-full"
                />
-            </section>
+            </div>
          )}
 
-         <section className="mb-16 space-y-12">
+         <div className="mb-16 space-y-12">
             {/* Título e descrição */}
             <div className="max-w-[1600px] mx-auto leading-relaxed font-sans">
                <SafeHTML
@@ -100,10 +101,10 @@ export default async function Page(props: PageProps) {
                   />
                </div>
             </div>
-         </section>
+         </div>
 
          {/* MediaGallery */}
-         <section className="flex flex-col max-w-[1600px] justify-center gap-6">
+         <div className="flex flex-col max-w-[1600px] justify-center gap-6">
             {gallery.slice(1).map((item, idx) => (
                <div key={idx} className="w-full sm:basis-1/2">
                   <WixMediaImage
@@ -115,18 +116,15 @@ export default async function Page(props: PageProps) {
                   />
                </div>
             ))}
-         </section>
-
-         {/* Título e descrição final */}
-         <div className="max-w-[1600px] mx-auto mb-16 space-y-12 leading-relaxed font-sans">
-            <SafeHTML
-               html={locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription}
-               className="text-left mt-4 text-base sm:text-lg lg:text-xl text-gray-700"
-            />
          </div>
 
+         {/* Título e descrição final */}
+         <SafeHTML
+            html={locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription}
+            className="text-left mt-4 text-base sm:text-lg lg:text-xl text-gray-700"
+         />
 
          <CtaSection />
-      </div>
+      </HomePageSection>
    );
 }
