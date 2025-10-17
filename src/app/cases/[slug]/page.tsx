@@ -38,11 +38,7 @@ export default async function Page(props: PageProps) {
          <section className="mb-16 space-y-12">
             {/* Título e descrição */}
             <div className="max-w-[1600px] mx-auto leading-relaxed font-sans">
-               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-red-600">
-                  {caseData.projectName}
-               </h1>
-               <h2 className="text-xl mt-4 font-semibold text-gray-900 mb-4">{caseData.projectName}</h2>
-               <SafeHTML 
+               <SafeHTML
                   html={locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription}
                   className="text-left mt-4 text-base sm:text-lg lg:text-xl text-gray-700"
                />
@@ -64,8 +60,7 @@ export default async function Page(props: PageProps) {
             {/* Texto + Imagem lado a lado */}
             <div className="flex flex-col lg:flex-row items-center gap-8  leading-relaxed font-sans">
                <div className="flex-1">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-4">{caseData.projectName}</h2>
-                  <SafeHTML 
+                  <SafeHTML
                      html={locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription}
                      className="text-gray-700"
                   />
@@ -98,13 +93,8 @@ export default async function Page(props: PageProps) {
 
             {/* Dois paragrafos */}
             <div className="flex flex-col lg:flex-row gap-8 leading-relaxed font-sans">
-               <div className="flex-1">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-4">{caseData.projectName}</h2>
-                  <div dangerouslySetInnerHTML={{ __html: locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription }} className="text-gray-700d">
-                  </div>
-               </div>
                <div className="flex-1 sm:mt-11">
-                  <SafeHTML 
+                  <SafeHTML
                      html={locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription}
                      className="text-gray-700"
                   />
@@ -129,8 +119,7 @@ export default async function Page(props: PageProps) {
 
          {/* Título e descrição final */}
          <div className="max-w-[1600px] mx-auto mb-16 space-y-12 leading-relaxed font-sans">
-            <h2 className="text-xl mt-8 font-semibold text-gray-900 mb-4">{caseData.projectName}</h2>
-            <SafeHTML 
+            <SafeHTML
                html={locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription}
                className="text-left mt-4 text-base sm:text-lg lg:text-xl text-gray-700"
             />
