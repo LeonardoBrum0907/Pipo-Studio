@@ -1,6 +1,8 @@
 import { createCasesService } from "@/services/cases";
 import { WixMediaImage } from "@/components/WixMediaImage";
 import { CtaSection } from "@/components/CtaSection";
+import { getLocale } from "next-intl/server";
+import { SafeHTML } from "@/components/SafeHTML";
 
 interface PageProps {
    params: { slug: string }
@@ -9,6 +11,7 @@ interface PageProps {
 export default async function Page(props: PageProps) {
    const { slug } = props.params;
    const casesService = createCasesService();
+   const locale = await getLocale();
    const caseData = await casesService.getCaseBySlug(slug);
 
    if (!caseData) {
@@ -39,9 +42,10 @@ export default async function Page(props: PageProps) {
                   {caseData.projectName}
                </h1>
                <h2 className="text-xl mt-4 font-semibold text-gray-900 mb-4">{caseData.projectName}</h2>
-               <p className="text-left mt-4 text-base sm:text-lg lg:text-xl text-gray-700">
-                  {caseData.projectDescription}
-               </p>
+               <SafeHTML 
+                  html={locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription}
+                  className="text-left mt-4 text-base sm:text-lg lg:text-xl text-gray-700"
+               />
             </div>
 
             {/* Linha arredondada */}
@@ -61,7 +65,10 @@ export default async function Page(props: PageProps) {
             <div className="flex flex-col lg:flex-row items-center gap-8  leading-relaxed font-sans">
                <div className="flex-1">
                   <h2 className="text-xl font-semibold text-gray-900 mb-4">{caseData.projectName}</h2>
-                  <p className="text-gray-700">{caseData.projectDescription}</p>
+                  <SafeHTML 
+                     html={locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription}
+                     className="text-gray-700"
+                  />
                </div>
                <div className="flex-1">
                   {caseData.mediaGallery[1] && (
@@ -93,10 +100,14 @@ export default async function Page(props: PageProps) {
             <div className="flex flex-col lg:flex-row gap-8 leading-relaxed font-sans">
                <div className="flex-1">
                   <h2 className="text-xl font-semibold text-gray-900 mb-4">{caseData.projectName}</h2>
-                  <p className="text-gray-700d">{caseData.projectDescription}</p>
+                  <div dangerouslySetInnerHTML={{ __html: locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription }} className="text-gray-700d">
+                  </div>
                </div>
                <div className="flex-1 sm:mt-11">
-                  <p className="text-gray-700">{caseData.projectDescription}</p>
+                  <SafeHTML 
+                     html={locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription}
+                     className="text-gray-700"
+                  />
                </div>
             </div>
          </section>
@@ -119,10 +130,12 @@ export default async function Page(props: PageProps) {
          {/* Título e descrição final */}
          <div className="max-w-[1600px] mx-auto mb-16 space-y-12 leading-relaxed font-sans">
             <h2 className="text-xl mt-8 font-semibold text-gray-900 mb-4">{caseData.projectName}</h2>
-            <p className="text-left mt-4 text-base sm:text-lg lg:text-xl text-gray-700">
-               {caseData.projectDescription}
-            </p>
+            <SafeHTML 
+               html={locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription}
+               className="text-left mt-4 text-base sm:text-lg lg:text-xl text-gray-700"
+            />
          </div>
+
 
          <CtaSection />
       </div>

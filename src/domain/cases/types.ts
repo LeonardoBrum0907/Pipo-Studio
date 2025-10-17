@@ -14,6 +14,8 @@ export interface Case {
   id: string;
   projectName: string;
   companyName: string;
+  englishDescription: string;
+  portugueseDescription: string;
   projectDescription: string;
   brandLogo: string;
   mediaGallery: Image[];
