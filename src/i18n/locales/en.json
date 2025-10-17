@@ -50,8 +50,54 @@
       "title": "Cases",
       "description": "Check out the main Visual Identity projects developed here at the studio. We always work through great collaboration with our clients, aiming to achieve the best possible result for the project and thus position each brand in a unique way."
    },
-   "locales": {
-      "en": "English",
-      "pt-BR": "Portuguese"
-   }
+  "contactPage": {
+    "title": "Investment Proposal Form",
+    "description": "This form is the first step to better understand the project's challenges and objectives, let's get started?",
+    "form": {
+      "fullName": {
+        "label": "What is your full name?",
+        "placeholder": "Name"
+      },
+      "email": {
+        "label": "Enter your best email",
+        "placeholder": "Email"
+      },
+      "company": {
+        "label": "What is the name of your company?",
+        "placeholder": "Company"
+      },
+      "segment": {
+        "label": "What does your company do within the F&B sector? (ex.: coffee shop, ice cream shop, artisanal products, beverages, wellness, etc.)",
+        "placeholder": "Segment"
+      },
+      "employeeCount": {
+        "label": "How many employees does your company currently have?",
+        "options": {
+          "selfEmployed": "Self-Employed Professional",
+          "micro": "Micro Business (2-10 employees)",
+          "small": "Small Business (11-50 employees)",
+          "medium": "Medium Business (51-200 employees)",
+          "large": "Large Business (200+ employees)"
+        }
+      },
+      "brandingInvestment": {
+        "label": "How much do you currently invest in branding?",
+        "options": {
+          "upTo10k": "Up to R$10k",
+          "10kTo20k": "R$10k – 20k",
+          "20kTo40k": "R$20k – 40k",
+          "over40k": "More than R$40k"
+        }
+      },
+      "challenges": {
+        "label": "What are the main challenges your brand is facing today?",
+        "placeholder": "Challenges"
+      },
+      "submit": "Submit"
+    }
+  },
+  "locales": {
+    "en": "English",
+    "pt-BR": "Portuguese"
+  }
 }
