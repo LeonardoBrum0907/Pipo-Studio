@@ -50,8 +50,54 @@
       "title": "Cases",
       "description": "Confira os principais projetos de Identidade Visual desenvolvidos aqui no estúdio. Sempre trabalhamos em grande colaboração com nossos clientes, buscando alcançar o melhor resultado possível para o projeto e, assim, posicionar cada marca de forma única."
    },
-   "locales": {
-      "en": "Inglês",
-      "pt-BR": "Português"
-   }
+  "contactPage": {
+    "title": "Formulário de Proposta de Investimento",
+    "description": "Este formulário é o primeiro passo para entender melhor os desafios e objetivos do projeto, vamos começar?",
+    "form": {
+      "fullName": {
+        "label": "Qual é o seu nome completo?",
+        "placeholder": "Nome"
+      },
+      "email": {
+        "label": "Digite seu melhor e-mail",
+        "placeholder": "E-mail"
+      },
+      "company": {
+        "label": "Qual é o nome da sua empresa?",
+        "placeholder": "Empresa"
+      },
+      "segment": {
+        "label": "O que sua empresa faz dentro do setor de F&B? (ex.: cafeteria, sorveteria, produtos artesanais, bebidas, bem-estar, etc.)",
+        "placeholder": "Segmento"
+      },
+      "employeeCount": {
+        "label": "Quantos funcionários sua empresa tem atualmente?",
+        "options": {
+          "selfEmployed": "Profissional Autônomo",
+          "micro": "Microempresa (2-10 funcionários)",
+          "small": "Pequena Empresa (11-50 funcionários)",
+          "medium": "Média Empresa (51-200 funcionários)",
+          "large": "Grande Empresa (200+ funcionários)"
+        }
+      },
+      "brandingInvestment": {
+        "label": "Quanto você investe atualmente em branding?",
+        "options": {
+          "upTo10k": "Até R$10k",
+          "10kTo20k": "R$10k – 20k",
+          "20kTo40k": "R$20k – 40k",
+          "over40k": "Mais de R$40k"
+        }
+      },
+      "challenges": {
+        "label": "Quais são os principais desafios que sua marca enfrenta hoje?",
+        "placeholder": "Desafios"
+      },
+      "submit": "Enviar"
+    }
+  },
+  "locales": {
+    "en": "Inglês",
+    "pt-BR": "Português"
+  }
 }
