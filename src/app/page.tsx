@@ -21,9 +21,16 @@ export default function Home() {
    const t = useTranslations('homePage');
    const ourBrandingProcessList = messages['homePage']['ourBrandingProcess'] as OurBrandingProcessList[];
 
+   const scrollTo = (element: string) => {
+      window.scrollTo({
+         top: document.getElementById(element)?.offsetTop,
+         behavior: 'smooth'
+      });
+   };
+
    return (
       <>
-         <HomePageSection>
+         <HomePageSection speed="0.1">
             <div className="flex flex-col gap-10 items-center justify-center">
                <div className="flex items-center justify-center">
                   <h1 className="w-full md:max-w-[49rem] text-6xl md:text-7xl text-center font-display">
@@ -31,11 +38,13 @@ export default function Home() {
                   </h1>
                </div>
                <ButtonCTA className="text-xl" />
-               <Arrow />
+               <button onClick={() => scrollTo('section-2')} className="cursor-pointer">
+                  <Arrow />
+               </button>
             </div>
          </HomePageSection>
 
-         <HomePageSection hasCTAElement>
+         <HomePageSection hasCTAElement speed="0.2" id="section-2">
             <div className="flex flex-col gap-8">
                <div className="flex flex-col md:flex-row gap-8 h-[100vh] md:h-[70vh]">
                   <Image src="/images/image-1.png" alt="Image 1" width={500} height={500} className="flex-2 object-cover rounded-xl" />
@@ -48,7 +57,7 @@ export default function Home() {
             </div>
          </HomePageSection>
 
-         <HomePageSection hasCTAElement>
+         <HomePageSection hasCTAElement speed="0.3">
             <div className="flex flex-col items-center gap-6 mt-8 mb-16">
                <h2 className="text-5xl md:text-6xl text-foreground-secondary text-center">
                   {t("ourBrandingProcessTitle")}
@@ -65,7 +74,7 @@ export default function Home() {
             })}
          </HomePageSection>
 
-         <HomePageSection hasCTAElement>
+         <HomePageSection hasCTAElement speed="0.4">
             <div className="flex items-center justify-center flex-col gap-8">
                <h2 className="w-full md:max-w-2/3 text-5xl md:text-6xl text-foreground-secondary text-center">
                   {t("brandsThatTastedOurMethod")}
@@ -137,7 +146,7 @@ export default function Home() {
             </div>
          </HomePageSection>
 
-         <CtaSection hasCTAElement />
+         <CtaSection hasCTAElement speed="0.5" />
       </>
    );
 }
