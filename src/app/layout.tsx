@@ -5,6 +5,7 @@ import 'swiper/css/navigation';
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { NextIntlClientProvider } from "next-intl";
+import { ScrollSmootherWrapper } from "@/components/ScrollSmootherWrapper";
 
 export const funnelDisplay = Funnel_Display({
    variable: "--font-funnel-display",
@@ -33,10 +34,12 @@ export default function RootLayout({
       <html lang="en" className={`${funnelDisplay.variable} ${funnelSans.variable} antialiased`}>
          <body className="font-display">
             <NextIntlClientProvider>
-               <Header />
-               <main>
-                  {children}
-               </main>
+               <ScrollSmootherWrapper>
+                  <Header />
+                  <main>
+                     {children}
+                  </main>
+               </ScrollSmootherWrapper>
             </NextIntlClientProvider>
          </body>
       </html>
