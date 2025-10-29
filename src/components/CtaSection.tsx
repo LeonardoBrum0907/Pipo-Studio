@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { HomePageSection } from "./HomePageSection";
 import { ButtonCTA } from "./ui/ButtonCTA";
 
-export function CtaSection({hasCTAElement = false, speed}: {hasCTAElement: boolean, speed?: string}) {
+export function CtaSection({hasCTAElement = false, speed}: {hasCTAElement?: boolean, speed?: string}) {
    const t = useTranslations('homePage');
    return (
       <HomePageSection hasCTAElement={hasCTAElement} speed={speed}>
