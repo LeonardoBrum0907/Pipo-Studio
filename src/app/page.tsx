@@ -15,6 +15,11 @@ import { getAllCasesAction } from "@/actions/cases";
 import Link from "next/link";
 import { WixMediaImage } from "@/components/WixMediaImage";
 import { Loader2 } from "lucide-react";
+import { useGSAP } from "@gsap/react";
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 
 interface OurBrandingProcessList {
    title: string;
@@ -27,6 +32,70 @@ export default function Home() {
    const ourBrandingProcessList = messages['homePage']['ourBrandingProcess'] as OurBrandingProcessList[];
    const [cases, setCases] = useState<Case[]>([]);
    const [isLoading, setIsLoading] = useState(true);
+   const homePageRef = useRef<HTMLDivElement>(null);
+
+   useGSAP(
+      () => {
+         gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
+
+         const itemsLeft = gsap.utils.toArray('.left');
+         itemsLeft.forEach((item: any) => {
+            gsap.from(item, {
+               x: 200,
+               scrollTrigger: {
+                  trigger: item,
+                  start: '-400% bottom',
+                  end: '-200% 70%',
+                  scrub: true,
+                  // markers: true,
+               }
+            })
+         })
+
+         const itemsRight = gsap.utils.toArray('.right');
+         itemsRight.forEach((item: any) => {
+            gsap.from(item, {
+               x: -150,
+               scrollTrigger: {
+                  trigger: item,
+                  start: '-400% bottom',
+                  end: '-200% 70%',
+                  scrub: true,
+                  // markers: true,
+               }
+            })
+         })
+
+         const itemsFadeUp = gsap.utils.toArray('.fadeUp');
+         itemsFadeUp.forEach((item: any) => {
+            gsap.from(item, {
+               y: 150,
+               scrollTrigger: {
+                  trigger: item,
+                  start: 'top bottom',
+                  end: 'top 50%',
+                  scrub: true,
+                  // markers: true,
+               }
+            })
+         })
+
+         const itemsFadeDown = gsap.utils.toArray('.fadeDown');
+         itemsFadeDown.forEach((item: any) => {
+            gsap.to(item, {
+               y: -150,
+               scrollTrigger: {
+                  trigger: item,
+                  start: '40% 20%',
+                  end: 'bottom 20%',
+                  scrub: true,
+                  // markers: true,
+               }
+            })
+         })
+      },
+      { scope: homePageRef }
+   );
 
    useEffect(() => {
       getAllCasesAction().then(({ cases }) => {
@@ -43,9 +112,9 @@ export default function Home() {
    };
 
    return (
-      <>
-         <HomePageSection speed="0.1">
-            <div className="flex flex-col gap-10 items-center justify-center">
+      <div ref={homePageRef} className="relative">
+         <HomePageSection speed="0.2">
+            <div className="flex flex-col gap-10 items-center justify-center fadeDown fadeIn">
                <div className="flex items-center justify-center">
                   <h1 className="w-full md:max-w-[49rem] text-6xl md:text-7xl text-center font-display">
                      {t("title.normalWeight")} <b>{t("title.boldWeight")}</b>
@@ -58,26 +127,24 @@ export default function Home() {
             </div>
          </HomePageSection>
 
-         <HomePageSection hasCTAElement speed="0.2" id="section-2">
-            <div className="flex flex-col gap-8">
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {isLoading ? (
-                     <div className="flex items-center justify-center w-full h-full ring col-span-full">
-                        <Loader2 className="w-10 h-10 animate-spin" />
-                     </div>
-                  ) : (
-                     cases.slice(0,4).map((item) => (
-                        <Link key={item.id} className="flex flex-col items-center w-full h-[50vh] md:h-[70vh] shadow-lg rounded-3xl" href={`/cases/${item.slug}`}>
-                           <WixMediaImage media={item.brandLogo} alt={item.projectName} objectFit="cover" imageTitle />
-                        </Link>
-                     ))
-                  )}
-               </div>
+         <HomePageSection hasCTAElement id="section-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 fadeUp">
+               {isLoading ? (
+                  <div className="flex items-center justify-center w-full min-h-[calc(100vh-110px)] col-span-full">
+                     <Loader2 className="w-10 h-10 animate-spin" />
+                  </div>
+               ) : (
+                  cases.slice(0, 4).map((item) => (
+                     <Link key={item.id} className="flex flex-col items-center w-full h-[50vh] md:h-[70vh] shadow-lg rounded-3xl" href={`/cases/${item.slug}`}>
+                        <WixMediaImage media={item.brandLogo} alt={item.projectName} objectFit="cover" imageTitle />
+                     </Link>
+                  ))
+               )}
             </div>
          </HomePageSection>
 
-         <HomePageSection hasCTAElement speed="0.3">
-            <div className="flex flex-col items-center gap-6 mt-8 mb-16">
+         <HomePageSection speed="0.2">
+            <div className="flex flex-col items-center gap-6 mt-8 mb-16 fadeUp">
                <h2 className="text-5xl md:text-6xl text-foreground-secondary text-center">
                   {t("ourBrandingProcessTitle")}
                </h2>
@@ -93,7 +160,7 @@ export default function Home() {
             })}
          </HomePageSection>
 
-         <HomePageSection hasCTAElement speed="0.4">
+         <HomePageSection speed="0.2">
             <div className="flex items-center justify-center flex-col gap-8">
                <h2 className="w-full md:max-w-2/3 text-5xl md:text-6xl text-foreground-secondary text-center">
                   {t("brandsThatTastedOurMethod")}
@@ -165,7 +232,7 @@ export default function Home() {
             </div>
          </HomePageSection>
 
-         <CtaSection hasCTAElement speed="0.5" />
-      </>
+         <CtaSection speed="0.2" />
+      </div>
    );
 }
