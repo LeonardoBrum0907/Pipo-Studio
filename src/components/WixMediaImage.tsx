@@ -47,10 +47,10 @@ export function WixMediaImage({
         alt={alt}
         className={`w-full h-full ${
           !disableZoom ? 'group-hover:scale-110' : ''
-        } transition duration-300 ease-in-out ${className}`}
+        } transition duration-600 ease-in-out ${className}`}
       />
       {imageTitle && (
-        <div className="flex justify-between rounded-3xl py-2 px-6 absolute bottom-5 md:bottom-0 md:translate-y-full group-hover:-translate-y-full transition-all duration-300 w-[90%] md:overflow-hidden bg-white/70 backdrop-blur-sm inset-ring inset-ring-gray-700/10">
+        <div className="flex justify-between rounded-3xl py-2 px-6 absolute bottom-5 md:bottom-0 md:translate-y-full group-hover:-translate-y-full transition-all duration-600 w-[90%] md:overflow-hidden bg-white/70 backdrop-blur-sm inset-ring inset-ring-gray-700/10">
           <span>ProjectName</span>
           <span>United States</span>
         </div>
