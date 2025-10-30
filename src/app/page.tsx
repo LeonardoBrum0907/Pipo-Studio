@@ -4,12 +4,17 @@ import { HomePageSection } from "@/components/HomePageSection";
 import { ButtonCTA } from "@/components/ui/ButtonCTA";
 import { Arrow } from "@/components/ui/Arrow";
 import { useTranslations, useMessages } from "next-intl";
-import Image from "next/image";
 import { OurBrandingProcess } from "@/components/OurBrandingProcess";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { Separator } from "@/components/ui/Separator";
 import { CtaSection } from "@/components/CtaSection";
+import { Case } from "@/domain/cases/types";
+import { useEffect, useState } from "react";
+import { getAllCasesAction } from "@/actions/cases";
+import Link from "next/link";
+import { WixMediaImage } from "@/components/WixMediaImage";
+import { Loader2 } from "lucide-react";
 
 interface OurBrandingProcessList {
    title: string;
@@ -20,6 +25,15 @@ export default function Home() {
    const messages = useMessages();
    const t = useTranslations('homePage');
    const ourBrandingProcessList = messages['homePage']['ourBrandingProcess'] as OurBrandingProcessList[];
+   const [cases, setCases] = useState<Case[]>([]);
+   const [isLoading, setIsLoading] = useState(true);
+
+   useEffect(() => {
+      getAllCasesAction().then(({ cases }) => {
+         setCases(cases);
+         setIsLoading(false);
+      });
+   }, []);
 
    const scrollTo = (element: string) => {
       window.scrollTo({
@@ -46,13 +60,18 @@ export default function Home() {
 
          <HomePageSection hasCTAElement speed="0.2" id="section-2">
             <div className="flex flex-col gap-8">
-               <div className="flex flex-col md:flex-row gap-8 h-[100vh] md:h-[70vh]">
-                  <Image src="/images/image-1.png" alt="Image 1" width={500} height={500} className="flex-2 object-cover rounded-xl" />
-                  <Image src="/images/image-2.png" alt="Image 2" width={500} height={500} className="flex-1 object-cover rounded-xl" />
-               </div>
-               <div className="flex flex-col md:flex-row gap-8 h-[100vh] md:h-[70vh]">
-                  <Image src="/images/image-4.png" alt="Image 1" width={500} height={500} className="flex-1 object-cover rounded-xl" />
-                  <Image src="/images/image-3.png" alt="Image 2" width={500} height={500} className="flex-2 object-cover rounded-xl" />
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {isLoading ? (
+                     <div className="flex items-center justify-center w-full h-full ring col-span-full">
+                        <Loader2 className="w-10 h-10 animate-spin" />
+                     </div>
+                  ) : (
+                     cases.slice(0,4).map((item) => (
+                        <Link key={item.id} className="flex flex-col items-center w-full h-[50vh] md:h-[70vh] shadow-lg rounded-3xl" href={`/cases/${item.slug}`}>
+                           <WixMediaImage media={item.brandLogo} alt={item.projectName} objectFit="cover" imageTitle />
+                        </Link>
+                     ))
+                  )}
                </div>
             </div>
          </HomePageSection>
