@@ -93,7 +93,16 @@
         "label": "What are the main challenges your brand is facing today?",
         "placeholder": "Challenges"
       },
-      "submit": "Submit"
+      "submit": "Submit",
+      "submitting": "Submitting...",
+      "success": {
+        "title": "Form submitted successfully!",
+        "message": "Thank you for your interest. We will contact you soon."
+      },
+      "error": {
+        "title": "Error submitting form",
+        "message": "An error occurred while processing your form. Please try again."
+      }
     }
   },
   "locales": {
