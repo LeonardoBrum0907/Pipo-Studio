@@ -146,7 +146,7 @@ export default function Home() {
                ) : (
                   cases.slice(0, 4).map((item) => (
                      <Link key={item.id} className="flex flex-col items-center w-full h-[50vh] md:h-[70vh] shadow-lg rounded-3xl" href={`/cases/${item.slug}`}>
-                        <WixMediaImage media={item.brandLogo} alt={item.projectName} objectFit="cover" imageTitle />
+                        <WixMediaImage media={item.brandLogo} alt={item.projectName} objectFit="cover" imageTitle projectName={item.projectName} companyName={item.companyName} />
                      </Link>
                   ))
                )}

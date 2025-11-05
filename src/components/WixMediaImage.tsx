@@ -19,12 +19,16 @@ export function WixMediaImage({
   objectFit,
   disableZoom = false,
   imageTitle = false,
+  projectName,
+  companyName,
 }: {
   media?: string;
   alt?: string;
   width?: number;
   height?: number;
   className?: string;
+  projectName?: string;
+  companyName?: string;
   disableZoom?: boolean;
   imageTitle?: boolean;
   objectFit?: 'cover' | 'contain';
@@ -51,8 +55,8 @@ export function WixMediaImage({
       />
       {imageTitle && (
         <div className="flex justify-between rounded-3xl py-2 px-6 absolute bottom-5 md:bottom-0 md:translate-y-full group-hover:-translate-y-full transition-all duration-600 w-[90%] md:overflow-hidden bg-white/70 backdrop-blur-sm inset-ring inset-ring-gray-700/10">
-          <span>ProjectName</span>
-          <span>United States</span>
+          <span>{projectName}</span>
+          <span>{companyName}</span>
         </div>
       )}
     </div>
