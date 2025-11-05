@@ -96,11 +96,23 @@ body {
    align-items: center;
    justify-content: center;
    z-index: 100;
+   transition: all 0.3s ease-in-out;
 
    svg {
       width: 20px;
       height: 20px;
       color: var(--border);
+   }
+}
+
+.swiper .swiper-button-next {
+   &:hover {
+      transform: scale(1.05);
+   }
+}
+.swiper .swiper-button-prev {
+   &:hover {
+      transform: scale(1.05);
    }
 }
 
