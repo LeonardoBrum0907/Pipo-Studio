@@ -6,6 +6,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { useGSAP } from '@gsap/react';
 
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
+
 interface ScrollSmootherWrapperProps {
    children: React.ReactNode;
 }
@@ -15,20 +17,11 @@ export function ScrollSmootherWrapper({ children }: ScrollSmootherWrapperProps) 
 
    useGSAP(
       () => {
-         gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
          ScrollSmoother.create({
             smooth: 2, // suavidade do scroll (em segundos)
             effects: true, // ativa data-speed e data-lag
             smoothTouch: 0.1, // suavidade em dispositivos touch
             
-         });
-         ScrollTrigger.create({
-            trigger: '.ctaElement',
-            pin: true,
-            start: 'top top',
-            end: '+=3500',
-            scrub: true,
-            // markers: true,
          });
          gsap.fromTo('.fadeIn', {
             opacity: 0,
