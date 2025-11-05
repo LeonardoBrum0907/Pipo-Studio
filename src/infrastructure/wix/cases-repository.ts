@@ -16,8 +16,16 @@ interface WixImageDTO {
 // DTO retornado pelo Wix
 interface WixCaseDTO {
    brandLogo: string;
-   englishDescriptions: string;
-   portugueseDescriptions: string;
+   paragraph1En: string;
+   paragraph1Pt: string;
+   paragraph2En: string;
+   paragraph2Pt: string;
+   paragraph3En: string;
+   paragraph3Pt: string;
+   paragraph4En: string;
+   paragraph4Pt: string;
+   paragraph5En: string;
+   paragraph5Pt: string;
    companyName: string;
    launchDate: string;
    mediagallery?: WixImageDTO[];
@@ -28,12 +36,26 @@ interface WixCaseDTO {
 
 // Mapper: converte dados do Wix para o domínio
 const mapWixCaseToCase = (wixCase: WixCaseDTO): Case => {
+   const formatLaunchDate = (launchDate: string) => {
+      const [year, month, day] = launchDate.split('-');
+      return `${day}/${month}/${year}`;
+   }
+
    return {
       id: wixCase._id,
       projectName: wixCase.projectName,
       companyName: wixCase.companyName,
-      englishDescription: wixCase.englishDescriptions,
-      portugueseDescription: wixCase.portugueseDescriptions,
+      paragraph1En: wixCase.paragraph1En,
+      paragraph1Pt: wixCase.paragraph1Pt,
+      paragraph2En: wixCase.paragraph2En,
+      paragraph2Pt: wixCase.paragraph2Pt,
+      paragraph3En: wixCase.paragraph3En,
+      paragraph3Pt: wixCase.paragraph3Pt,
+      paragraph4En: wixCase.paragraph4En,
+      paragraph4Pt: wixCase.paragraph4Pt,
+      paragraph5En: wixCase.paragraph5En,
+      paragraph5Pt: wixCase.paragraph5Pt,
+      launchDate: formatLaunchDate(wixCase.launchDate),
       projectDescription: wixCase.projectDescription,
       brandLogo: wixCase.brandLogo,
       mediaGallery: Array.isArray(wixCase.mediagallery)
