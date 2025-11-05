@@ -8,7 +8,7 @@ export function Header() {
    const t = useTranslations('homePage');
 
    const links = [
-      { href: '/#about', label: t('about') },
+      { href: '/', label: t('about') },
       { href: '/cases', label: t('cases') },
       { href: '/contact', label: t('contact') },
    ]

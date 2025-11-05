@@ -26,6 +26,8 @@ interface OurBrandingProcessList {
    description: string;
 }
 
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
+
 export default function Home() {
    const messages = useMessages();
    const t = useTranslations('homePage');
@@ -36,16 +38,14 @@ export default function Home() {
 
    useGSAP(
       () => {
-         gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
-
          const itemsLeft = gsap.utils.toArray('.left');
          itemsLeft.forEach((item: any) => {
             gsap.from(item, {
                x: 200,
                scrollTrigger: {
-                  trigger: item,
-                  start: '-400% bottom',
-                  end: '-200% 70%',
+                  trigger: '#section-2',
+                  start: 'top bottom',
+                  end: 'top 70%',
                   scrub: true,
                   // markers: true,
                }
@@ -57,14 +57,24 @@ export default function Home() {
             gsap.from(item, {
                x: -150,
                scrollTrigger: {
-                  trigger: item,
-                  start: '-400% bottom',
-                  end: '-200% 70%',
+                  trigger: '#section-2',
+                  start: 'top bottom',
+                  end: 'top 70%',
                   scrub: true,
                   // markers: true,
                }
             })
          })
+
+         ScrollTrigger.create({
+            trigger: '#section-2',
+            pin: ".ctaElement",
+            start: 'top top',
+            endTrigger: '#cta-section',
+            // end: '+=3500',
+            // scrub: true,
+            // markers: true,
+         });
 
          const itemsFadeUp = gsap.utils.toArray('.fadeUp');
          itemsFadeUp.forEach((item: any) => {
@@ -112,7 +122,7 @@ export default function Home() {
    };
 
    return (
-      <div ref={homePageRef} className="relative">
+      <div ref={homePageRef}>
          <HomePageSection speed="0.2">
             <div className="flex flex-col gap-10 items-center justify-center fadeDown fadeIn">
                <div className="flex items-center justify-center">
@@ -160,7 +170,7 @@ export default function Home() {
             })}
          </HomePageSection>
 
-         <HomePageSection speed="0.2">
+         <HomePageSection speed="0.2" id="cta-section">
             <div className="flex items-center justify-center flex-col gap-8">
                <h2 className="w-full md:max-w-2/3 text-5xl md:text-6xl text-foreground-secondary text-center">
                   {t("brandsThatTastedOurMethod")}
@@ -232,7 +242,7 @@ export default function Home() {
             </div>
          </HomePageSection>
 
-         <CtaSection speed="0.2" />
+         <CtaSection speed="0.2"/>
       </div>
    );
 }
