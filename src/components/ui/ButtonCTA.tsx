@@ -20,7 +20,7 @@ export function ButtonCTA({ children, type = "primary", className }: ButtonCTAPr
             </Button>
          )}
          {type === "secondary" && (
-            <Button asChild className={`px-8 transition-all bg-transparent border border-foreground-secondary text-foreground-secondary ${className}`}>
+            <Button asChild className={`px-8 transition-all bg-transparent border border-foreground-secondary text-foreground-secondary ${className}  hover:bg-foreground-secondary hover:text-white`}>
                <Link href="/contact">
                   {children || t("cta")}
                </Link>
