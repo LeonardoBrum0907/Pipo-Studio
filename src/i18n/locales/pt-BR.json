@@ -93,7 +93,16 @@
         "label": "Quais são os principais desafios que sua marca enfrenta hoje?",
         "placeholder": "Desafios"
       },
-      "submit": "Enviar"
+      "submit": "Enviar",
+      "submitting": "Enviando...",
+      "success": {
+        "title": "Formulário enviado com sucesso!",
+        "message": "Obrigado pelo seu interesse. Entraremos em contato em breve."
+      },
+      "error": {
+        "title": "Erro ao enviar formulário",
+        "message": "Ocorreu um erro ao processar seu formulário. Por favor, tente novamente."
+      }
     }
   },
   "locales": {
