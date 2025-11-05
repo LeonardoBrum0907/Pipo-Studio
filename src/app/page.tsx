@@ -179,6 +179,7 @@ export default function Home() {
                <Swiper
                   navigation={true}
                   spaceBetween={48}
+                  loop={true}
                   modules={[Navigation]}
                   className="mySwiper w-full md:w-2/3 !px-8 !py-4 md:!px-12 md:!py-8"
                >
