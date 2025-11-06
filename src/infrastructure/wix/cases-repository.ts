@@ -86,7 +86,7 @@ export class WixCasesRepository implements CasesRepository {
       }
 
       const { items } = await query.find();
-      console.log('items', items);
+      // console.log('cases', items);
       return (items as WixCaseDTO[]).map(mapWixCaseToCase);
    }
 
