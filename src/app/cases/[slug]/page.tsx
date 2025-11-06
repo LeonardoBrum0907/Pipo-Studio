@@ -12,8 +12,8 @@ interface PageProps {
 export default async function Page(props: PageProps) {
    const { slug } = props.params;
    const casesService = createCasesService();
-   const locale = await getLocale();
    const caseData = await casesService.getCaseBySlug(slug);
+   const locale = await getLocale();
 
    if (!caseData) {
       return <h1 className="text-center text-xl mt-10">Case not found</h1>;
