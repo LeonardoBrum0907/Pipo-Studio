@@ -172,10 +172,10 @@ body {
    }
 
    .font_1, .font_2, .font_3, .font_4, .font_5 {
-      @apply text-foreground-secondary text-5xl md:text-6xl;
+      @apply text-foreground-secondary text-5xl md:text-6xl mb-6;
    }
 
    .font_6 {
-      @apply text-foreground md:text-3xl;
+      @apply text-foreground text-2xl md:text-3xl mb-4;
    }
 }

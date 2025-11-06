@@ -12,8 +12,8 @@ interface PageProps {
 export default async function Page(props: PageProps) {
    const { slug } = props.params;
    const casesService = createCasesService();
-   const locale = await getLocale();
    const caseData = await casesService.getCaseBySlug(slug);
+   const locale = await getLocale();
 
    if (!caseData) {
       return <h1 className="text-center text-xl mt-10">Case not found</h1>;
@@ -22,10 +22,10 @@ export default async function Page(props: PageProps) {
    const gallery = caseData.mediaGallery;
 
    return (
-      <HomePageSection>
+      <HomePageSection className="gap-16">
          {/* MediaGallery0 */}
          {gallery[0] && (
-            <div className="mb-12 text-center">
+            <div className="text-center">
                <WixMediaImage
                   media={gallery[0].src}
                   alt={gallery[0].fileName}
@@ -36,72 +36,76 @@ export default async function Page(props: PageProps) {
             </div>
          )}
 
-         <div className="mb-16 space-y-12">
-            {/* Título e descrição */}
-            <div className="max-w-[1600px] mx-auto leading-relaxed font-sans">
+         {/* <div className="flex flex-col gap-[5rem]"> */}
+         {/* Título e descrição */}
+         <div className="leading-relaxed font-sans">
+            <h1 className="font_1">{caseData.projectName}</h1>
+            <SafeHTML
+               html={locale === "pt-BR" ? caseData.paragraph1Pt : caseData.paragraph1En}
+            />
+         </div>
+
+         {/* Linha arredondada */}
+         <div className="flex flex-col sm:border rounded-full border-black sm:flex-row justify-center items-center gap-4">
+            <div className="flex-1 text-center border rounded-full border-black sm:border-none py-3 px-6 text-gray-700">
+               {caseData.projectName}
+            </div>
+            <div className="flex-1 text-center border rounded-full border-black sm:border-none py-3 px-6 text-gray-700">
+               {caseData.companyName}
+            </div>
+            <div className="flex-1 text-center border rounded-full border-black sm:border-none py-3 px-6 text-gray-700">
+               {caseData.launchDate}
+            </div>
+         </div>
+
+         {/* Texto + Imagem lado a lado */}
+         <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="flex-2">
                <SafeHTML
-                  html={locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription}
-                  className="text-left mt-4 text-base sm:text-lg lg:text-xl text-gray-700"
+                  html={locale === "pt-BR" ? caseData.paragraph2Pt : caseData.paragraph2En}
                />
             </div>
-
-            {/* Linha arredondada */}
-            <div className="flex flex-col sm:border rounded-full border-black sm:flex-row justify-center items-center gap-4">
-               <div className="flex-1 text-center border rounded-full border-black sm:border-none py-3 px-6 text-gray-700">
-                  {caseData.projectName}
-               </div>
-               <div className="flex-1 text-center border rounded-full border-black sm:border-none py-3 px-6 text-gray-700">
-                  {caseData.projectName}
-               </div>
-               <div className="flex-1 text-center border rounded-full border-black sm:border-none py-3 px-6 text-gray-700">
-                  {caseData.projectName}
-               </div>
-            </div>
-
-            {/* Texto + Imagem lado a lado */}
-            <div className="flex flex-col lg:flex-row items-center gap-8  leading-relaxed font-sans">
-               <div className="flex-1">
-                  <SafeHTML
-                     html={locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription}
-                     className="text-gray-700"
-                  />
-               </div>
-               <div className="flex-1">
-                  {caseData.mediaGallery[1] && (
-                     <WixMediaImage
-                        media={caseData.mediaGallery[1].src}
-                        alt={caseData.mediaGallery[1].fileName}
-                        disableZoom
-                        objectFit="cover"
-                        className="w-full"
-                     />
-                  )}
-               </div>
-            </div>
-
-            {/* MediaGallery2 */}
-            <div className="w-full">
-               {caseData.mediaGallery[2] && (
+            <div className="flex-3">
+               {caseData.mediaGallery[1] && (
                   <WixMediaImage
-                     media={caseData.mediaGallery[2].src}
-                     alt={caseData.mediaGallery[2].fileName}
+                     media={caseData.mediaGallery[1].src}
+                     alt={caseData.mediaGallery[1].fileName}
                      disableZoom
                      objectFit="cover"
                      className="w-full"
                   />
                )}
             </div>
+         </div>
 
-            {/* Dois paragrafos */}
-            <div className="flex flex-col lg:flex-row gap-8 leading-relaxed font-sans">
-               <div className="flex-1 sm:mt-11">
-                  <SafeHTML
-                     html={locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription}
-                     className="text-gray-700"
-                  />
-               </div>
+         {/* MediaGallery2 */}
+         <div className="w-full">
+            {caseData.mediaGallery[2] && (
+               <WixMediaImage
+                  media={caseData.mediaGallery[2].src}
+                  alt={caseData.mediaGallery[2].fileName}
+                  disableZoom
+                  objectFit="cover"
+                  className="w-full"
+               />
+            )}
+         </div>
+
+         {/* Dois paragrafos */}
+         <div className="flex flex-col lg:flex-row gap-8 leading-relaxed font-sans">
+            <div className="flex-1">
+               <SafeHTML
+                  html={locale === "pt-BR" ? caseData.paragraph3Pt : caseData.paragraph3En}
+               />
+            </div>
+            <div className="flex-1">
+               <h2 className="font_6 opacity-0">Hidden</h2> {/* Hidden title */}
+               <SafeHTML
+                  html={locale === "pt-BR" ? caseData.paragraph4Pt : caseData.paragraph4En}
+               />
             </div>
          </div>
+         {/* </div> */}
 
          {/* MediaGallery */}
          <div className="flex flex-col max-w-[1600px] justify-center gap-6">
@@ -120,8 +124,7 @@ export default async function Page(props: PageProps) {
 
          {/* Título e descrição final */}
          <SafeHTML
-            html={locale === "pt-BR" ? caseData.portugueseDescription : caseData.englishDescription}
-            className="text-left mt-4 text-base sm:text-lg lg:text-xl text-gray-700"
+            html={locale === "pt-BR" ? caseData.paragraph5Pt : caseData.paragraph5En}
          />
 
          <CtaSection />
