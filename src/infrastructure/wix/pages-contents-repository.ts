@@ -56,8 +56,6 @@ export class WixPagesContentsRepository implements PagesContentsRepository {
 
       const { items } = await wixClient.items.query('HomeContent').find();
 
-      // console.log('items', items);
-      
       return (items as WixHomeContentDTO[]).map(mapWixHomeContentToHomeContent)[0];
    }
 
@@ -66,7 +64,6 @@ export class WixPagesContentsRepository implements PagesContentsRepository {
 
       const { items } = await wixClient.items.query('CtaContent').find();
 
-      console.log('items', items);
       
       return (items as WixCtaContentDTO[]).map(mapWixCtaContentToCtaContent)[0];
    }

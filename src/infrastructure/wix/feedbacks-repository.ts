@@ -27,10 +27,7 @@ export class WixFeedbacksRepository implements FeedbacksRepository {
 
   async findAll(): Promise<Feedback[]> {
     const wixClient = await getWixClient();
-
     const { items } = await wixClient.items.query(this.collectionName).find();
-
-   //  console.log('items', items);
 
     return (items as WixFeedbackDTO[]).map(mapWixFeedbackToFeedback);
   }
