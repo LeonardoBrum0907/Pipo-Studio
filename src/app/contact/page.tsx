@@ -44,24 +44,24 @@ export default function Contact() {
          <p>{t('description')}</p>
 
          <form ref={formRef} action={formAction} className="flex flex-col gap-8 mt-10">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2" >
                <label htmlFor="name">{t('form.fullName.label')}</label>
                <Input type="text" name="name" placeholder={t('form.fullName.placeholder')} className="h-14" />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2" data-lag="0.1">
                <label htmlFor="email">{t('form.email.label')}</label>
                <Input type="email" name="email" placeholder={t('form.email.placeholder')} className="h-14" />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2" data-lag="0.2">
                <label htmlFor="company">{t('form.company.label')}</label>
                <Input type="text" name="company" placeholder={t('form.company.placeholder')} className="h-14" />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2" data-lag="0.3">
                <label htmlFor="segment">{t('form.segment.label')}</label>
                <Input type="text" name="segment" placeholder={t('form.segment.placeholder')} className="h-14" />
             </div>
 
-            <div className="flex">
+            <div className="flex" data-lag="0.4">
                <div className="flex flex-col flex-1 gap-2">
                   <label htmlFor="employeeCount">{t('form.employeeCount.label')}</label>
                   <RadioGroup name="employeeCount" className="flex flex-col gap-4">
@@ -110,7 +110,7 @@ export default function Contact() {
                </div>
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2" data-lag="0.5">
                <label htmlFor="challenges">{t('form.challenges.label')}</label>
                <Input type="text" name="challenges" placeholder={t('form.challenges.placeholder')} className="h-14" />
             </div>
