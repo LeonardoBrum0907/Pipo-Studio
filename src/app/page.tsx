@@ -26,7 +26,7 @@ import { SafeHTML } from "@/components/SafeHTML";
 import { getAllFeedbacksAction } from "@/actions/feedbacks";
 import { Feedback } from "@/domain/feedbacks/types";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
+// gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
 export default function Home() {
    const messages = useMessages();
@@ -79,20 +79,6 @@ export default function Home() {
             // scrub: true,
             // markers: true,
          });
-
-         const itemsFadeUp = gsap.utils.toArray('.fadeUp');
-         itemsFadeUp.forEach((item: any) => {
-            gsap.from(item, {
-               y: 150,
-               scrollTrigger: {
-                  trigger: item,
-                  start: 'top bottom',
-                  end: 'top 50%',
-                  scrub: true,
-                  // markers: true,
-               }
-            })
-         })
 
          const itemsFadeDown = gsap.utils.toArray('.fadeDown');
          itemsFadeDown.forEach((item: any) => {
