@@ -240,7 +240,7 @@ export default function Home() {
                         delay: 2500,
                         disableOnInteraction: false,
                      }}
-                     className="mySwiper w-full md:w-2/3 !px-8 !py-4 md:!px-12 md:!py-8"
+                     className="mySwiper w-full md:w-2/3 !px-8 !py-4 md:!px-6 md:!py-8"
                   >
                      {feedbacks.map((item, idx) => (
                         <SwiperSlide key={idx} className="!flex flex-col md:flex-row items-center justify-center py-8 px-12 gap-12 ring ring-foreground rounded-2xl">
