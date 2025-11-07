@@ -26,7 +26,7 @@ import { SafeHTML } from "@/components/SafeHTML";
 import { getAllFeedbacksAction } from "@/actions/feedbacks";
 import { Feedback } from "@/domain/feedbacks/types";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
+// gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
 export default function Home() {
    const messages = useMessages();
@@ -79,20 +79,6 @@ export default function Home() {
             // scrub: true,
             // markers: true,
          });
-
-         const itemsFadeUp = gsap.utils.toArray('.fadeUp');
-         itemsFadeUp.forEach((item: any) => {
-            gsap.from(item, {
-               y: 150,
-               scrollTrigger: {
-                  trigger: item,
-                  start: 'top bottom',
-                  end: 'top 50%',
-                  scrub: true,
-                  // markers: true,
-               }
-            })
-         })
 
          const itemsFadeDown = gsap.utils.toArray('.fadeDown');
          itemsFadeDown.forEach((item: any) => {
@@ -240,7 +226,7 @@ export default function Home() {
                         delay: 2500,
                         disableOnInteraction: false,
                      }}
-                     className="mySwiper w-full md:w-2/3 !px-8 !py-4 md:!px-12 md:!py-8"
+                     className="mySwiper w-full md:w-2/3 !px-8 !py-4 md:!px-6 md:!py-8"
                   >
                      {feedbacks.map((item, idx) => (
                         <SwiperSlide key={idx} className="!flex flex-col md:flex-row items-center justify-center py-8 px-12 gap-12 ring ring-foreground rounded-2xl">

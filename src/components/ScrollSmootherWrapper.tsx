@@ -23,6 +23,21 @@ export function ScrollSmootherWrapper({ children }: ScrollSmootherWrapperProps) 
             smoothTouch: 0.1, // suavidade em dispositivos touch
             
          });
+
+         const itemsFadeUp = gsap.utils.toArray('.fadeUp');
+         itemsFadeUp.forEach((item: any) => {
+            gsap.from(item, {
+               y: 150,
+               scrollTrigger: {
+                  trigger: item,
+                  start: 'top bottom',
+                  end: 'top 50%',
+                  scrub: true,
+                  // markers: true,
+               }
+            })
+         })
+
          gsap.fromTo('.fadeIn', {
             opacity: 0,
             y: 100,

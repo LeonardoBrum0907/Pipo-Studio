@@ -38,7 +38,7 @@ export default async function Page(props: PageProps) {
 
          {/* <div className="flex flex-col gap-[5rem]"> */}
          {/* Título e descrição */}
-         <div className="leading-relaxed font-sans">
+         <div className="leading-relaxed font-sans fadeUp">
             <h1 className="font_1">{caseData.projectName}</h1>
             <SafeHTML
                html={locale === "pt-BR" ? caseData.paragraph1Pt : caseData.paragraph1En}
@@ -46,20 +46,20 @@ export default async function Page(props: PageProps) {
          </div>
 
          {/* Linha arredondada */}
-         <div className="flex flex-col sm:border rounded-full border-black sm:flex-row justify-center items-center gap-4">
-            <div className="flex-1 text-center border rounded-full border-black sm:border-none py-3 px-6 text-gray-700">
+         <div className="flex flex-col sm:border rounded-full border-black sm:flex-row justify-center items-center gap-4 fadeUp">
+            <div className="flex-1 text-center border rounded-full w-full border-black sm:border-none py-3 px-6 text-gray-700">
                {caseData.projectName}
             </div>
-            <div className="flex-1 text-center border rounded-full border-black sm:border-none py-3 px-6 text-gray-700">
+            <div className="flex-1 text-center border rounded-full w-full border-black sm:border-none py-3 px-6 text-gray-700">
                {caseData.companyName}
             </div>
-            <div className="flex-1 text-center border rounded-full border-black sm:border-none py-3 px-6 text-gray-700">
+            <div className="flex-1 text-center border rounded-full w-full border-black sm:border-none py-3 px-6 text-gray-700">
                {caseData.launchDate}
             </div>
          </div>
 
          {/* Texto + Imagem lado a lado */}
-         <div className="flex flex-col lg:flex-row items-center gap-16">
+         <div className="flex flex-col lg:flex-row items-center gap-16 fadeUp">
             <div className="flex-2">
                <SafeHTML
                   html={locale === "pt-BR" ? caseData.paragraph2Pt : caseData.paragraph2En}
@@ -79,7 +79,7 @@ export default async function Page(props: PageProps) {
          </div>
 
          {/* MediaGallery2 */}
-         <div className="w-full">
+         <div className="w-full fadeUp">
             {caseData.mediaGallery[2] && (
                <WixMediaImage
                   media={caseData.mediaGallery[2].src}
@@ -92,7 +92,7 @@ export default async function Page(props: PageProps) {
          </div>
 
          {/* Dois paragrafos */}
-         <div className="flex flex-col lg:flex-row gap-8 leading-relaxed font-sans">
+         <div className="flex flex-col lg:flex-row gap-8 leading-relaxed font-sans fadeUp">
             <div className="flex-1">
                <SafeHTML
                   html={locale === "pt-BR" ? caseData.paragraph3Pt : caseData.paragraph3En}
@@ -108,9 +108,9 @@ export default async function Page(props: PageProps) {
          {/* </div> */}
 
          {/* MediaGallery */}
-         <div className="flex flex-col max-w-[1600px] justify-center gap-6">
+         <div className="flex flex-col w-full justify-center gap-6">
             {gallery.slice(1).map((item, idx) => (
-               <div key={idx} className="w-full sm:basis-1/2">
+               <div key={idx} className="w-full sm:basis-1/2 fadeUp">
                   <WixMediaImage
                      media={item.src}
                      alt={item.fileName}
@@ -125,9 +125,10 @@ export default async function Page(props: PageProps) {
          {/* Título e descrição final */}
          <SafeHTML
             html={locale === "pt-BR" ? caseData.paragraph5Pt : caseData.paragraph5En}
+            className="fadeUp"
          />
 
-         <CtaSection />
+         <CtaSection speed="0.2"/>
       </HomePageSection>
    );
 }
