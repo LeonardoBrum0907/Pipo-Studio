@@ -39,7 +39,7 @@ export default function Contact() {
    }, [state?.success]);
 
    return (
-      <HomePageSection className="gap-4">
+      <HomePageSection className="gap-4 fadeIn">
          <h1 className="text-foreground-secondary text-5xl md:text-6xl">{t('title')}</h1>
          <p>{t('description')}</p>
 
