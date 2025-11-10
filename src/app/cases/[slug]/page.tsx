@@ -6,11 +6,11 @@ import { SafeHTML } from "@/components/SafeHTML";
 import { HomePageSection } from "@/components/HomePageSection";
 
 interface PageProps {
-   params: { slug: string }
+   params: Promise<{ slug: string }>
 }
 
 export default async function Page(props: PageProps) {
-   const { slug } = props.params;
+   const { slug } = await props.params;
    const casesService = createCasesService();
    const caseData = await casesService.getCaseBySlug(slug);
    const locale = await getLocale();
