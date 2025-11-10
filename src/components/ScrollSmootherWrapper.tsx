@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { useGSAP } from '@gsap/react';
+import { usePathname } from 'next/navigation';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
@@ -14,11 +15,12 @@ interface ScrollSmootherWrapperProps {
 
 export function ScrollSmootherWrapper({ children }: ScrollSmootherWrapperProps) {
    const main = useRef<HTMLDivElement>(null);
+   const pathname = usePathname();
 
    useGSAP(
       () => {
          ScrollSmoother.create({
-            smooth: 2, // suavidade do scroll (em segundos)
+            smooth: 3, // suavidade do scroll (em segundos)
             effects: true, // ativa data-speed e data-lag
             smoothTouch: 0.1, // suavidade em dispositivos touch
             
@@ -27,13 +29,13 @@ export function ScrollSmootherWrapper({ children }: ScrollSmootherWrapperProps) 
          const itemsFadeUp = gsap.utils.toArray('.fadeUp');
          itemsFadeUp.forEach((item: any) => {
             gsap.from(item, {
-               y: 150,
+               y: 200,
                scrollTrigger: {
                   trigger: item,
                   start: 'top bottom',
-                  end: 'top 50%',
+                  end: 'top 75%',
                   scrub: true,
-                  // markers: true,
+                  markers: true,
                }
             })
          })
@@ -50,7 +52,7 @@ export function ScrollSmootherWrapper({ children }: ScrollSmootherWrapperProps) 
             duration: 0.6,
          })
       },
-      { scope: main }
+      { scope: main, dependencies: [pathname] }
    );
 
    return (

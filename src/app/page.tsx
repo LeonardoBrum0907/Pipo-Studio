@@ -19,12 +19,12 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { getPagesContentsAction } from "@/actions/pages-contents";
 import { HomeContent, OurBrandingProcessList } from "@/domain/pages-cotents/types";
 import { SafeHTML } from "@/components/SafeHTML";
 import { getAllFeedbacksAction } from "@/actions/feedbacks";
 import { Feedback } from "@/domain/feedbacks/types";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 // gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
@@ -119,7 +119,7 @@ export default function Home() {
 
    return (
       <div ref={homePageRef}>
-         <HomePageSection speed="0.2">
+         <HomePageSection speed="0.1">
             <div className="flex flex-col gap-10 items-center justify-center fadeDown fadeIn">
                <div className="flex items-center justify-center">
                   {homeContent ? (
@@ -143,9 +143,12 @@ export default function Home() {
          <HomePageSection hasCTAElement id="section-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 fadeUp">
                {isLoading ? (
-                  <div className="flex items-center justify-center w-full min-h-[calc(100vh-110px)] col-span-full">
-                     <Loader2 className="w-10 h-10 animate-spin" />
-                  </div>
+                  <>
+                     <Skeleton className="w-full h-[50vh] md:h-[70vh]" />
+                     <Skeleton className="w-full h-[50vh] md:h-[70vh]" />
+                     <Skeleton className="w-full h-[50vh] md:h-[70vh]" />
+                     <Skeleton className="w-full h-[50vh] md:h-[70vh]" />
+                  </>
                ) : (
                   cases.slice(0, 4).map((item) => (
                      <Link key={item.id} className="flex flex-col items-center w-full h-[50vh] md:h-[70vh] shadow-lg rounded-3xl" href={`/cases/${item.slug}`}>
@@ -157,7 +160,7 @@ export default function Home() {
          </HomePageSection>
 
          <HomePageSection speed="0.2">
-            <div className="flex flex-col items-center gap-6 mt-8 mb-16 fadeUp">
+            <div className="flex flex-col items-center gap-6 mt-8 mb-16">
                {homeContent ? (
                   <SafeHTML
                      html={locale === "pt-BR" ? homeContent?.paragraph2Pt : homeContent?.paragraph2En}
@@ -203,7 +206,7 @@ export default function Home() {
             )}
          </HomePageSection>
 
-         <HomePageSection speed="0.2" id="cta-section">
+         <HomePageSection speed="0.3" id="cta-section">
             <div className="flex items-center justify-center flex-col gap-8">
                {homeContent ? (
                   <SafeHTML
@@ -261,7 +264,7 @@ export default function Home() {
             </div>
          </HomePageSection>
 
-         <CtaSection speed="0.2" />
+         <CtaSection speed="0.4" />
       </div>
    );
 }
