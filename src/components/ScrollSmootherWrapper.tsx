@@ -35,7 +35,7 @@ export function ScrollSmootherWrapper({ children }: ScrollSmootherWrapperProps) 
                   start: 'top bottom',
                   end: 'top 75%',
                   scrub: true,
-                  markers: true,
+                  // markers: true,
                }
             })
          })
